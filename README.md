@@ -1,14 +1,4 @@
-# JAX-RS Template Application
+WeighIn API
+===========
 
-This is a template for a lightweight RESTful API using JAX-RS. The sample code is a call for getting the current time.
-    
-## Running the application locally
-
-First build with:
-
-    $mvn clean install
-
-Then run it with:
-
-    $ java -cp target/classes:target/dependency/* com.example.Main
-
+[ ![Codeship Status for dylanplecki/weighin-api](https://www.codeship.io/projects/fd6cba60-1f57-0132-0258-621d0a95d617/status)](https://www.codeship.io/projects/35701)
