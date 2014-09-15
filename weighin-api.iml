@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="simple-5.1.6" level="project" />
+    <orderEntry type="library" name="org.glassfish.jersey.containers:jersey-container-simple-http:2.12" level="project" />
   </component>
 </module>
 
