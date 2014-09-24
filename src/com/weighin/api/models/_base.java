@@ -7,11 +7,11 @@ import java.util.Map;
  */
 class _base {
 
-    private Map<String,String> _attributes;
+    private Map<String,String> attributes;
 
-    public Map<String,String> getAttributes() { return _attributes; }
-    public String getAttribute(String name) { return _attributes.getOrDefault(name, null); }
+    public Map<String,String> getAttributes() { return attributes; }
+    public String getAttribute(String name) { return attributes.getOrDefault(name, null); }
 
-    public void setAttributes(Map<String,String> attributes) { this._attributes = attributes; }
-    public void setAttribute(String name, String value) { _attributes.put(name, value); }
+    public void setAttributes(Map<String,String> attributes) { this.attributes = attributes; }
+    public void setAttribute(String name, String value) { attributes.put(name, value); }
 }

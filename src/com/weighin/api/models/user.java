@@ -7,21 +7,27 @@ import java.security.MessageDigest;
  */
 public class user extends _base {
 
-    private String _username;
-    private String _email;
-    private String _password_hash;
+    private String username;
+    private String email;
+    private String password;
 
-    public String getUsername() { return _username; }
-    public String getEmail() { return _email; }
-    public String getPasswordHash() { return _password_hash; }
+    public String getUsername() { return username; }
+    public String getEmail() { return email; }
+    public String getPasswordHash() { return password; }
 
-    public void setUsername(String username) { this._username = username; }
-    public void setEmail(String email) throws Exception { this._email = verifyEmail(email); }
-    public void setPassword(String password) throws Exception { this._password_hash = hashPassword(password); }
-    public void setPasswordHash(String password_hash) { this._password_hash = password_hash; }
+    public void setUsername(String username) { // TODO: Check for uniqueness
+        this.username = username;
+    }
+
+    public void setEmail(String email) throws Exception { // TODO: Check for uniqueness
+        this.email = verifyEmail(email);
+    }
+
+    public void setPassword(String password) throws Exception { this.password = hashPassword(password); }
+    public void setPasswordHash(String password_hash) { this.password = password_hash; }
 
     public boolean checkPassword(String password) throws Exception {
-        return this._password_hash == hashPassword(password);
+        return this.password == hashPassword(password);
     }
 
     private String hashPassword(String password) throws Exception {
@@ -34,5 +40,11 @@ public class user extends _base {
         if (!com.weighin.api.models.email.verify(email)) throw new Exception("Email address format isn't valid");
         // Do any email manipulation
         return email;
+    }
+
+    public user(String username, String email, String password) throws Exception {
+        setUsername(username);
+        setEmail(email);
+        setPassword(password);
     }
 }
