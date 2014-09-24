@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * Created by Dylan on 9/24/2014.
  */
-public class _base {
+class _base {
 
     private Map<String,String> _attributes;
 
