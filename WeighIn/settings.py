@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'api',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,10 +65,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
         'NAME': 'weighin',
-        'HOST': 'linus.mongohq.com',
-        'PORT': '10045',
         'USER': 'admin',
         'PASSWORD': '21252610e',
+        'HOST': 'mongodb://linus.mongohq.com/weighin',
+        'PORT': '10045',
     }
 }
 
