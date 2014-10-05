@@ -64,11 +64,11 @@ WSGI_APPLICATION = 'WeighIn.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
-        'NAME': 'weighin',
-        'USER': 'admin',
-        'PASSWORD': '21252610e',
-        'HOST': 'mongodb://linus.mongohq.com/weighin',
-        'PORT': '10045',
+        'NAME': 'weighin_dev',
+#        'USER': 'admin',
+#        'PASSWORD': '21252610e',
+        'HOST': 'mongodb://srv01.nyc.int.plecki.net',
+        'PORT': '8080',
     }
 }
 

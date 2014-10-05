@@ -8,16 +8,13 @@ class User(models.Model):
     password = models.CharField(max_length=60)
     points = models.BigIntegerField()
 
-    class Meta:
-        bcrypt_rounds = 8
-
-    def password_crypt_insert(self, password):
+    def password_crypt_insert(self, password, rounds=8):
         """ Encrypts and inserts a password into the object """
-        self.password = bcrypt.encrypt(password, rounds=self.Meta.bcrypt_rounds)
+        self.password = bcrypt.encrypt(password, rounds=rounds)
 
-    def password_crypt_compare(self, password):
+    def password_crypt_compare(self, password, rounds=8):
         """ Compares an unencrypted password to the stored encrypted password """
-        return bcrypt.encrypt(password, rounds=self.Meta.bcrypt_rounds) == self.password
+        return bcrypt.encrypt(password, rounds=rounds) == self.password
 
 
 class Application(models.Model):
@@ -28,7 +25,7 @@ class Application(models.Model):
 
 class Task(models.Model):
     application = models.ForeignKey("Application")
-    worth = models.DecimalField()
+    worth = models.FloatField()
     accuracy = models.IntegerField()
     data = models.TextField()
 
