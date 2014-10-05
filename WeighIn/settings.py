@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangotoolbox',
+    'permission_backend_nonrel',
     'rest_framework',
     'api',
 )
@@ -53,6 +55,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'permission_backend_nonrel.backends.NonrelPermissionBackend',
+)
+
 ROOT_URLCONF = 'WeighIn.urls'
 
 WSGI_APPLICATION = 'WeighIn.wsgi.application'
@@ -65,8 +71,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
         'NAME': 'weighin_dev',
-#        'USER': 'admin',
-#        'PASSWORD': '21252610e',
+#       'USER': 'admin',
+#       'PASSWORD': 'password',
         'HOST': 'mongodb://srv01.nyc.int.plecki.net',
         'PORT': '8080',
     }
