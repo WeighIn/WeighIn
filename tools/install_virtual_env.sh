@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python_dir="/usr/lib/python2.7/python"
+python_dir="/usr/bin/python2.7"
 
 cwd=$(pwd)
 
