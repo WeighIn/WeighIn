@@ -10,4 +10,4 @@ Development Website: http://dev.weighin.me
 
 API Documentation: http://bit.ly/weighin_api_list
 
-Slack Site: https://weighin.slack.com
+Slack Board: https://weighin.slack.com
