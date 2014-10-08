@@ -71,10 +71,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
         'NAME': 'weighin_dev',
-#       'USER': 'admin',
-#       'PASSWORD': 'password',
-        'HOST': 'mongodb://srv01.atl.int.plecki.net',
-        'PORT': '8080',
+        'USER': 'admin',
+        'PASSWORD': 'weighin239',
+        'HOST': 'ds039960.mongolab.com',
+        'PORT': '39960',
     }
 }
 
@@ -95,9 +95,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
