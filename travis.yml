@@ -1,0 +1,27 @@
+
+language: python
+
+# Set Test Versions
+python:
+#  - "2.6"
+  - "2.7"
+#  - "3.2"
+#  - "3.3"
+#  - "3.4"
+
+# Install Dependencies
+install:
+  - "pip install -r requirements.txt"
+
+# Run Tests
+script: python manage.py test
+
+# Deploy to Heroku Dev
+deploy:
+  provider: heroku
+  api_key: "bc7d0355-330e-4ca4-af3b-4d6055993b43"
+  app:
+#    master: weighin-app # Not yet implemented
+    production: dev-weighin-app
+  run:
+      - "python manage.py syncdb"
