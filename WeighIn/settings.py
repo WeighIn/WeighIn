@@ -73,7 +73,7 @@ DATABASES = {
         'NAME': 'weighin_dev',
 #       'USER': 'admin',
 #       'PASSWORD': 'password',
-        'HOST': 'mongodb://srv01.nyc.int.plecki.net',
+        'HOST': 'mongodb://srv01.atl.int.plecki.net',
         'PORT': '8080',
     }
 }
