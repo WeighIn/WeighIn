@@ -21,7 +21,7 @@ deploy:
   provider: heroku
   api_key: "bc7d0355-330e-4ca4-af3b-4d6055993b43"
   app:
-#    master: weighin-app # Not yet implemented
+    master: weighin-app # Not yet implemented
     develop: dev-weighin-app
   run:
       - "python manage.py syncdb"

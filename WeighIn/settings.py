@@ -71,10 +71,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
         'NAME': 'weighin_dev',
-        'USER': 'admin',
-        'PASSWORD': 'weighin239',
-        'HOST': 'ds039960.mongolab.com',
-        'PORT': '39960',
+#       'USER': 'admin',
+#       'PASSWORD': 'password',
+        'HOST': 'dbs.weighin.me',
+        'PORT': '8080',
     }
 }
 
