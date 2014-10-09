@@ -1,0 +1,67 @@
+/*div {*/
+/*border: 1px solid black;*/
+/*}*/
+
+body {
+    font-family: 'Lato';
+    font-weight: 300;
+    /*padding-bottom: 5%;*/
+}
+
+/* CSS for nav bar */
+
+.navigation li {
+    display: inline-block;
+    padding-right: 18px;
+    padding-left: 18px;
+    font-size: 1.2em;
+}
+
+.navigation {
+    padding: 1%;
+    background-color: rgba(105,105,105,0.9);
+    border-bottom: 1px solid black;
+    margin-top: -5px;
+}
+
+.navigation li a {
+    color: gray;
+}
+
+.fa {
+    color: white;
+    font-size: 1.7em;
+}
+.active {
+    color: black;
+    font-size: 1.75em;
+}
+
+/* color of text in links (normal + hover) */
+
+#name {
+    font-weight: 700;
+}
+
+.head {
+    font-size: 3.1em;
+    padding: 5%;
+}
+.header p {
+    font-size: 1.4em;
+}
+.team {
+    font-size: 0.9em;
+    margin-bottom: 5%;
+}
+
+.rowone {
+    padding: 20px;
+}
+img {
+    margin-bottom: 4px;
+}
+
+.team > div {
+    margin-bottom: 40px;
+}

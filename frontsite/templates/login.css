@@ -1,0 +1,78 @@
+/*div {
+	border: 1px solid black;
+}*/
+
+body {
+	font-family: 'Lato';
+	font-weight: 300;
+	padding-bottom: 5%;
+}
+
+.content {
+	margin-top: 4%;
+	margin-bottom: 4%;
+}
+
+.head {
+	font-size: 2.7em;
+	margin-bottom: -3px;
+    margin-top: -20px;
+}
+.subhead {
+    font-size: 1.2em;
+}
+.row {
+    padding: 0;
+}
+
+.login, .signup {
+  	position: relative;
+  	margin: 0 auto;
+  	padding: 20px 20px;
+    margin-top: -10px;
+}
+
+.buttons {
+	margin-bottom: 5%;
+}
+
+/* CSS for nav bar */
+
+.navigation li {
+	display: inline-block;
+	padding-right: 18px;
+	padding-left: 18px;
+	font-size: 1.2em; 
+}
+
+.navigation {
+	padding: 1%;
+	background-color: rgba(105,105,105,0.9);
+	border-bottom: 1px solid black;
+    margin-top: -5px;
+}
+
+
+.navigation li a {
+	color: gray;
+}
+
+.pure-button {
+    margin-top: 40px;
+    background-color: rgba(105,105,105,0.9);
+}
+
+.fa {
+	color: white;
+	font-size: 1.7em;
+}
+.active {
+	color: black;
+	font-size: 1.75em;
+}
+
+legend {
+    color: white;
+}
+
+/* color of text in links (normal + hover) */
