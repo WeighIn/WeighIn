@@ -24,5 +24,5 @@ Before starting the setup procedure, make sure to go to the [JetBrains Student W
 5. Navigate to the directory in which you cloned the WeighIn git repository using `cd /path/to/weighin/repo` in the terminal.
 6. Windows users can skip to step #9 by running the command `tools\setup.bat`.
 7. Install the local virtual python environment by running `virtualenv env`.
-8. Now we can install the package requirements with the Windows command `env\Scripts\pip.exe install -r "%REQUIRE_FILE%" --allow-all-external` or the Linux/OSX command `env/Scripts/pip install -r "%REQUIRE_FILE%" --allow-all-external`.
+8. Now we can install the package requirements with the Windows command `env\Scripts\pip.exe install -r "requirements.txt" --allow-all-external` or the Linux/OSX command `env/Scripts/pip install -r "requirements.txt" --allow-all-external`.
 9. Open the PyCharm IDE and create a new project. Name the project `WeighIn`, with the location of the Github cloned repository used in set #5, and the `Django project` project type. Make sure the local Python 2.7 virtual environment intepreter is selected. Once finished, a popup may appear asking if you would like to use the existing sources, select yes.
