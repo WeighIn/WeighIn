@@ -9,3 +9,4 @@ markdown
 django-filter
 passlib
 gunicorn
+dj-static
