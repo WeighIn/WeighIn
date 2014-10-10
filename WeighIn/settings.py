@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'djangotoolbox',
     'rest_framework',
     'api',
+    'frontsite',
 )
 
 MIDDLEWARE_CLASSES = (
