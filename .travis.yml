@@ -14,9 +14,15 @@ python:
 #  - "3.3"
 #  - "3.4"
 
+# Set Cache Options
+cache:
+  directories:
+    - $HOME/.pip-cache/
+    - /home/travis/virtualenv/python2.7/lib/python2.7/site-packages
+
 # Install Dependencies
 install:
-  - "pip install -r requirements.txt"
+  - "pip install -r requirements.txt --download-cache $HOME/.pip-cache"
 
 # Run Tests
 script: python manage.py test
