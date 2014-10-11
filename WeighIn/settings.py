@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djangotoolbox',
     'rest_framework',
-    'api',
+    'api_v1',
     'frontsite',
 )
 
