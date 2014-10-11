@@ -1,6 +1,6 @@
 
 # Django NonRel
--e git+https://github.com/django-nonrel/django@nonrel-1.6#egg=django
+https://github.com/django-nonrel/django/archive/nonrel-1.6.zip
 
 # Djang NonRel Dependencies
 djangotoolbox
@@ -20,6 +20,7 @@ passlib
 gunicorn
 
 # Unused Git Repositories
+#-e git+https://github.com/django-nonrel/django#egg=django
 #-e git+https://github.com/django-nonrel/djangotoolbox#egg=djangotoolbox
 #-e git+https://github.com/django-nonrel/mongodb-engine#egg=mongodb-engine
 #-e git+https://github.com/django-nonrel/django-permission-backend-nonrel#egg=django-permission-backend-nonrel

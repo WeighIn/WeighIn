@@ -75,7 +75,7 @@ DATABASES = {
 #       'USER': 'admin',
 #       'PASSWORD': 'password',
         'HOST': 'dbs.weighin.me',
-        'PORT': '8080',
+        'PORT': 8080,
     }
 }
 
