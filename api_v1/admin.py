@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import *
+from api_v1.models import *
 
 
 class ApplicationAdmin(admin.ModelAdmin):
