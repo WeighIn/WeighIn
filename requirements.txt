@@ -10,6 +10,8 @@ permission-backend-nonrel
 # Django Rest Framework
 djangorestframework
 django-filter
+django-rest-framework-mongoengine
+django-rest-swagger
 
 # Django Dependencies
 dj-static

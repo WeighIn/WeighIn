@@ -4,21 +4,32 @@ from rest_framework import serializers
 from api_v1.models import *
 
 
-class UserSerializer(serializers.Serializer):
-    pk = serializers.Field()
-
+class UserSerializer(serializers.ModelSerializer):
+    id = serializers.Field()
     username = serializers.CharField(max_length=32, unique=True, required=True)
     email = serializers.CharField(max_length=254, required=True)
     password = serializers.CharField(max_length=60, required=True)
     points = serializers.IntegerField(default=0)
 
-    def restore_object(self, attrs, instance=None):
-        if instance:
-            # Update object instance
-            instance.username = attrs.get('username', instance.username)
-            instance.email = attrs.get('email', instance.email)
-            instance.password = User.password_crypt(attrs.get('password', instance.password))
-            return instance
+    class Meta:
+        fields = ('id', 'username', 'email', 'password', 'points')
+        read_only_fields = ('points', 'username')
+        write_only_fields = ('password',)
 
-        # Create new instance
-        return User(**attrs)
+
+class ApplicationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Application
+        fields = ('id', 'name', 'owner', 'app_key')
+
+
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = ('id', 'application', 'worth', 'accuracy', 'data')
+
+
+class ResultSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Result
+        fields = ('id', 'task', 'user', 'submit_date', 'data')
