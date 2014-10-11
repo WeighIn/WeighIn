@@ -1,6 +1,11 @@
 
 language: python
 
+# Notification Preferences
+notifications:
+  email: false
+  slack: weighin:LF7vfHWDvYn0Uijaoj6ZDg6e
+
 # Set Test Versions
 python:
 #  - "2.6"
