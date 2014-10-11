@@ -4,17 +4,20 @@ from passlib.hash import bcrypt
 
 class User(models.Model):
     username = models.CharField(max_length=32, unique=True, db_index=True)
-    email = models.EmailField(max_length=254, unique=True)
+    email = models.EmailField(max_length=254)
     password = models.CharField(max_length=60)
     points = models.BigIntegerField()
 
+    def password_crypt(password, rounds=8):
+        return bcrypt.encrypt(password, rounds=rounds)
+
     def password_crypt_insert(self, password, rounds=8):
         """ Encrypts and inserts a password into the object """
-        self.password = bcrypt.encrypt(password, rounds=rounds)
+        self.password = self.password_crypt(password, rounds)
 
     def password_crypt_compare(self, password, rounds=8):
         """ Compares an unencrypted password to the stored encrypted password """
-        return bcrypt.encrypt(password, rounds=rounds) == self.password
+        return self.password_crypt(password, rounds) == self.password
 
 
 class Application(models.Model):

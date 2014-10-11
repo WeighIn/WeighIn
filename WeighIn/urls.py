@@ -6,6 +6,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/1/', include('api.urls')),
+    url(r'^api/1/', include('api_v1.urls')),
     (r'^static/', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
