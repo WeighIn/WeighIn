@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +18,7 @@
     <!-- bootstrap, font awesome and index.css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="{% static "frontsite/index.css" %}">
     
 </head>
 
@@ -24,8 +26,8 @@
     <!-- nav tabs w/o bootstrap -->
     <ul class="navigation">
         <li> <a  href=""> <i class="fa fa-home active"></i></a></li>
-        <li> <a href="login.html"> <i class="fa fa-user"></i></a></li>
-        <li> <a href="main.html"> <i class="fa fa-send-o"></i></a></li>
+        <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
+        <li> <a href="/main"> <i class="fa fa-send-o"></i></a></li>
     </ul>
 
     <!-- nav tabs end -->
@@ -55,7 +57,7 @@
         </div>
         <!-- buttons end -->
         <div class="footer">
-            <a href="aboutus.html"><p>About us</p></a>
+            <a href="/about/"><p>About us</p></a>
         </div>
 
     </div>
