@@ -1,12 +1,25 @@
 
+# Django NonRel
 -e git+https://github.com/django-nonrel/django@nonrel-1.6#egg=django
--e git+https://github.com/django-nonrel/djangotoolbox#egg=djangotoolbox
--e git+https://github.com/django-nonrel/mongodb-engine#egg=mongodb-engine
--e git+https://github.com/django-nonrel/django-permission-backend-nonrel#egg=django-permission-backend-nonrel
 
+# Djang NonRel Dependencies
+djangotoolbox
+django-mongodb-engine
+permission-backend-nonrel
+
+# Django Rest Framework
 djangorestframework
-markdown
 django-filter
-passlib
-gunicorn
+
+# Django Dependencies
 dj-static
+markdown
+passlib
+
+# Web Server
+gunicorn
+
+# Unused Git Repositories
+#-e git+https://github.com/django-nonrel/djangotoolbox#egg=djangotoolbox
+#-e git+https://github.com/django-nonrel/mongodb-engine#egg=mongodb-engine
+#-e git+https://github.com/django-nonrel/django-permission-backend-nonrel#egg=django-permission-backend-nonrel
