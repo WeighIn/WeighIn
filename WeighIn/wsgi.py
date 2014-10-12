@@ -17,7 +17,7 @@ build_env_settings = {
 
 import os
 
-settings = build_env_settings.get(os.environ.get('BUILD_ENV', build_env_default))
+settings = build_env_settings.get(os.environ.get('BUILD_ENV', build_env_default).lower())
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings)
 
 from django.core.wsgi import get_wsgi_application
