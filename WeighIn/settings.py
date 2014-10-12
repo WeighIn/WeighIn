@@ -21,9 +21,9 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__
 SECRET_KEY = '$c)vj1w(jat5stxjuc2gii%qdbpa%r!358s)a#sewl#zr_ugqn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'api_v1',
     'frontsite',
+    'rest_framework_swagger',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -68,16 +69,7 @@ WSGI_APPLICATION = 'WeighIn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django_mongodb_engine',
-        'NAME': 'weighin_dev',
-#       'USER': 'admin',
-#       'PASSWORD': 'password',
-        'HOST': 'dbs.weighin.me',
-        'PORT': 8080,
-    }
-}
+DATABASES = {}
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
@@ -113,4 +105,20 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
+}
+
+
+SWAGGER_SETTINGS = {
+    "exclude_namespaces": [], # List URL namespaces to ignore
+    "api_version": '1.0',  # Specify your API's version
+    "api_path": "/api/1/",  # Specify the path to your API not a root level
+    "enabled_methods": [  # Specify which methods to enable in Swagger UI
+        'get',
+        'post',
+        'put',
+        'delete'
+    ],
+    #"api_key": '', # An API key
+    "is_authenticated": False,  # Set to True to enforce user authentication,
+    "is_superuser": False,  # Set to True to enforce admin only access
 }
