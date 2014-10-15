@@ -10,8 +10,8 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name', 'Profile.points')
-        read_only_fields = ('id', 'Profile.points', 'username')
+        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name')
+        read_only_fields = ('id', 'username')
         write_only_fields = ('password',)
 
 
@@ -19,7 +19,7 @@ class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ('id', 'app', 'worth', 'accuracy', 'data')
-        read_only_fields = ('id', 'application')
+        read_only_fields = ('id', 'app')
 
 
 class ResultSerializer(serializers.ModelSerializer):
