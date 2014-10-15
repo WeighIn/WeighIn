@@ -60,6 +60,8 @@ body {
 }
 img {
     margin-bottom: 4px;
+    width:10em;height:auto;
+    border-radius:1em;
 }
 
 .team > div {
