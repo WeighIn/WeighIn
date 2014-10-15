@@ -17,7 +17,7 @@ body {
 .mainrow {
     padding-top: 0;
     padding-bottom: 0;
-    background-image: url("../../Documents/Github/WeighIn/frontsite/templates/background1.png");
+    background-image: url("background1.png");
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-position: center;
