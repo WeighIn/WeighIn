@@ -1,60 +1,116 @@
 /*div {*/
-	/*border: 1px solid black;*/
+/*border: 1px solid black;*/
 /*}*/
 
 body {
-	font-family: 'Lato';
-	font-weight: 300;
-	padding-bottom: 5%;
+    font-family: 'Lato';
+    font-weight: 300;
+    padding-bottom: 0%;
 }
 
 .content {
-	margin-top: 4%;
-	margin-bottom: 7%;
+    text-align: left;
+    margin-top: 0%;
+    margin-bottom: 4%;
+}
+
+.mainrow {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: url("../../Documents/Github/WeighIn/frontsite/templates/background1.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-position: right 10px bottom -40px;
+    background-size: 1000px Auto;
+    border-bottom: solid 0px dimgrey;
+}
+
+.threemain {
+    text-align: center;
+    padding: 2.5%;
+    font-size: 1.25em;
+    background-color: lightgrey;
+}
+
+.threemain h3 {
+    font-weight: 700;
+}
+
+.threemain h2 {
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.threemain i {
+    color: black;
+    font-size: 10em;
+}
+
+.threemain-heading {
+    margin-bottom: 5%;
+    font-size: 1.3em;
+}
+
+.threemain-main {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.bgimg {
+    height: 400px;
+    width: 650px;
 }
 
 .head {
     margin-top: 6%;
-	font-size: 6em;
-	margin-bottom: -3px;
+    font-size: 10em;
+    margin-bottom: -3px;
+    font-weight: 700;
+    margin-bottom: -20px;
 }
 
 .subhead {
-	font-size: 2.5em;
-	color: rgb(105,105,105)
+    font-size: 4.2em;
+    color: rgb(105,105,105);
+}
+
+.btn-group {
+    margin-top: 25px;
+    margin-left: 50px;
 }
 
 .buttons {
-	margin-bottom: 5%;
+    margin-bottom: 5%;
 }
 
 /* CSS for nav bar */
 
 .navigation li {
-	display: inline-block;
-	padding-right: 18px;
-	padding-left: 18px;
-	font-size: 1.2em;
+    display: inline-block;
+    padding-right: 18px;
+    padding-left: 18px;
+    font-size: 1.2em;
 }
 
 .navigation {
-	padding: 1%;
-	background-color: rgba(105,105,105,0.9);
-	border-bottom: 1px solid black;
+    padding: 1%;
+    background-color: rgba(105,105,105,0.9);
+    border-bottom: 1px solid black;
     margin-top: -5px;
 }
 
 .navigation li a {
-	color: gray;
+    color: gray;
 }
 
 .fa {
-	color: white;
-	font-size: 1.7em;
+    color: white;
+    font-size: 1.7em;
 }
 .active {
-	color: black;
-	font-size: 1.75em;
+    color: black;
+    font-size: 1.75em;
 }
 
 .buttons {
@@ -68,10 +124,11 @@ body {
     border-top: solid 1px rgba(155,155,155,0.9);
 }
 
-.container-fluid {
-    padding-bottom: 5%;
-    margin-bottom: 5%;
-}
+/*.container-fluid {*/
+    /*padding-bottom: 5%;*/
+    /*margin-bottom: 5%;*/
+/*}*/
+
 a {
     color: rgb(105,105,105);
 }
@@ -80,6 +137,98 @@ a:hover {
     color: black;
 
 }
+
+/* color of text in links (normal + hover) */
+
+
+/*div {*/
+	/*border: 1px solid black;*/
+/*}*/
+
+/*body {*/
+	/*font-family: 'Lato';*/
+	/*font-weight: 300;*/
+	/*padding-bottom: 5%;*/
+/*}*/
+
+/*.main {*/
+    /*background-color: black;*/
+    /*background-image: url(coinbasebg.jpg);*/
+    /*background-size:  cover;*/
+/*}*/
+
+/*.content {*/
+	/*margin-top: 4%;*/
+	/*margin-bottom: 7%;*/
+/*}*/
+
+/*.head {*/
+    /*margin-top: 6%;*/
+	/*font-size: 6em;*/
+	/*margin-bottom: -3px;*/
+/*}*/
+
+/*.subhead {*/
+	/*font-size: 2.5em;*/
+	/*color: rgb(105,105,105)*/
+/*}*/
+
+/*.buttons {*/
+	/*margin-bottom: 5%;*/
+/*}*/
+
+/* CSS for nav bar */
+
+/*.navigation li {*/
+	/*display: inline-block;*/
+	/*padding-right: 18px;*/
+	/*padding-left: 18px;*/
+	/*font-size: 1.2em;*/
+/*}*/
+
+/*.navigation {*/
+	/*padding: 1%;*/
+	/*background-color: rgba(105,105,105,0.9);*/
+	/*border-bottom: 1px solid black;*/
+    /*margin-top: -5px;*/
+/*}*/
+
+/*.navigation li a {*/
+	/*color: gray;*/
+/*}*/
+
+/*.fa {*/
+	/*color: white;*/
+	/*font-size: 1.7em;*/
+/*}*/
+/*.active {*/
+	/*color: black;*/
+	/*font-size: 1.75em;*/
+/*}*/
+
+/*.buttons {*/
+    /*margin-bottom: 5%;*/
+/*}*/
+
+/*.footer {*/
+    /*text-align: right;*/
+
+    /*padding: 10px;*/
+    /*border-top: solid 1px rgba(155,155,155,0.9);*/
+/*}*/
+
+/*.container-fluid {*/
+    /*padding-bottom: 5%;*/
+    /*margin-bottom: 5%;*/
+/*}*/
+/*a {*/
+    /*color: rgb(105,105,105);*/
+/*}*/
+/*a:hover {*/
+    /*text-decoration: none;*/
+    /*color: black;*/
+
+/*}*/
 
 /* color of text in links (normal + hover) */
 
