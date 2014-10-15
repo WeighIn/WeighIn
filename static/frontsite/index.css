@@ -1,6 +1,11 @@
 /*div {*/
 /*border: 1px solid black;*/
 /*}*/
+/*div {*/
+/*border: 1px solid black;*/
+/*}*/
+
+/*TODO: Clean code*/
 
 body {
     font-family: 'Lato';
@@ -8,33 +13,14 @@ body {
     padding-bottom: 0%;
 }
 
-.content {
-    text-align: left;
-    margin-top: 0%;
-    margin-bottom: 4%;
-}
-
-.mainrow {
-    padding-top: 0;
-    padding-bottom: 0;
-    background-image: url("background1.png");
-    background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    background-position: center;
-    background-position: right 10px bottom -40px;
-    background-size: 1000px Auto;
-    border-bottom: solid 0px dimgrey;
-}
-
 .threemain {
-    text-align: center;
-    padding: 2.5%;
-    font-size: 1.25em;
     background-color: lightgrey;
 }
 
-.threemain h3 {
-    font-weight: 700;
+
+.content {
+    text-align: left;
+
 }
 
 .threemain h2 {
@@ -57,6 +43,35 @@ body {
     text-align: center;
 }
 
+.mainrow {
+    z-index: 9999;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: url("background1.png");
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-position: right 10px bottom -40px;
+    background-size: 850px Auto;
+    border-bottom: solid 0px dimgrey;
+}
+.threemain {
+    text-align: center;
+    padding: 2.5%;
+}
+
+.threemain  p {
+    font-size: 1.25em;
+}
+
+.threemain h3 {
+    font-weight: 700;
+}
+
+.content {
+    margin-top: 0%;
+    margin-bottom: 4%;
+}
 .bgimg {
     height: 400px;
     width: 650px;
@@ -64,14 +79,14 @@ body {
 
 .head {
     margin-top: 6%;
-    font-size: 10em;
+    font-size: 6em;
     margin-bottom: -3px;
     font-weight: 700;
     margin-bottom: -20px;
 }
 
 .subhead {
-    font-size: 4.2em;
+    font-size: 2.5em;
     color: rgb(105,105,105);
 }
 
@@ -124,11 +139,10 @@ body {
     border-top: solid 1px rgba(155,155,155,0.9);
 }
 
-/*.container-fluid {*/
-    /*padding-bottom: 5%;*/
-    /*margin-bottom: 5%;*/
-/*}*/
-
+.container-fluid {
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+}
 a {
     color: rgb(105,105,105);
 }
