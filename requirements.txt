@@ -16,7 +16,6 @@ django-rest-swagger
 # Django Dependencies
 dj-static
 markdown
-passlib
 
 # Web Server
 gunicorn
