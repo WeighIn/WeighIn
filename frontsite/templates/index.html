@@ -21,7 +21,12 @@
     <link rel="stylesheet" href="{% static "frontsite/animate.css" %}">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="indexapp.js"></script>
+    <!--<script src="../../static/frontsite/indexapp.js"></script>-->
+    <script>
+        $(document).ready(function() {
+            $('body .mainrow').css({'height':($(window).height()-120)+'px'});
+        });
+    </script>
 
 </head>
 
