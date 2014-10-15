@@ -29,9 +29,9 @@ script:
   - |
     if [ ${TRAVIS_BRANCH} == master ]; then
       BUILD_ENV=prod
-    else if [ ${TRAVIS_BRANCH} == prod_web ]; then
+    elif [ ${TRAVIS_BRANCH} == prod_web ]; then
       BUILD_ENV=prod_web
-    else if [ ${TRAVIS_BRANCH} == prod_api ]; then
+    elif [ ${TRAVIS_BRANCH} == prod_api ]; then
       BUILD_ENV=prod_api
     else
       BUILD_ENV=dev
