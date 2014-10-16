@@ -28,3 +28,4 @@ class AppTask(generics.RetrieveUpdateDestroyAPIView, mixins.CreateModelMixin):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     lookup_field = 'id'
+
