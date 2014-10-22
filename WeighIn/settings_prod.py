@@ -4,8 +4,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
         'NAME': 'weighin',
-#       'USER': 'admin',
-#       'PASSWORD': 'password',
         'HOST': 'dbs.weighin.me',
         'PORT': 8080,
     }

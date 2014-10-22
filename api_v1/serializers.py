@@ -6,8 +6,6 @@ from api_v1.models import *
 
 
 class UserSerializer(serializers.ModelSerializer):
-    Profile = serializers.PrimaryKeyRelatedField()
-
     class Meta:
         model = User
         fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name')

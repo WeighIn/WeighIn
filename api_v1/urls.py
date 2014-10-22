@@ -6,7 +6,19 @@ urlpatterns = patterns('',
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^docs/', include('rest_framework_swagger.urls')),
 
-    url(r'^account/info/?$', views.AccountInfo.as_view()),
-    url(r'^app/tasks/?$', views.AppTasks.as_view()),
-    url(r'^app/tasks/(?P<id>[0-9]+)/?$', views.AppTask.as_view()),
+    url(r'^account/?$', views.Account.as_view()),
+
+    url(r'^tasks', include([
+#        url(r'^/?$', views.Tasks.as_view()),
+
+#        url(r'^/(?P<tid>[0-9]+)/?$', views.TaskSelect.as_view()),
+    ])),
+
+    url(r'^results', include([
+        url(r'^/?$', views.Results.as_view()),
+
+#        url(r'^/(?P<rid>[0-9]+)/?$', views.ResultSelect.as_view()),
+
+        url(r'^/task/(?P<tid>[0-9]+)/?$', views.ResultsTaskSelect.as_view()),
+    ])),
 )
