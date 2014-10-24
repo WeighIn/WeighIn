@@ -7,6 +7,11 @@ class ProfileAdmin(admin.ModelAdmin):
 admin.site.register(Profile, ProfileAdmin)
 
 
+class ApplicationAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Application, ApplicationAdmin)
+
+
 class ResultAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Result, ResultAdmin)
