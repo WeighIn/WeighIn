@@ -44,7 +44,7 @@ body {
 }
 
 .mainrow {
-    z-index: 9999;
+    z-index: 0;
     padding-top: 0;
     padding-bottom: 0;
     background-image: url("background1.png");
@@ -107,7 +107,7 @@ body {
     padding-left: 18px;
     font-size: 1.2em;
     position:fixed;
-    z-index:max;
+    z-index:1;
 }
 
 .navigation {
@@ -145,6 +145,9 @@ body {
     padding-bottom: 5%;
     margin-bottom: 5%;
 }
+.content {
+    z-index:0;
+}
 a {
     color: rgb(105,105,105);
 }
@@ -153,6 +156,7 @@ a:hover {
     color: black;
 
 }
+
 
 /* color of text in links (normal + hover) */
 
