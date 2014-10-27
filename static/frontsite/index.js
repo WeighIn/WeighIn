@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('ul>li').hover(
+	$('.fa').hover(
 		function() {
 			$(this).addClass('hover');
 		},
