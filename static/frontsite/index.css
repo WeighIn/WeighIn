@@ -106,15 +106,15 @@ body {
     padding-right: 18px;
     padding-left: 18px;
     font-size: 1.2em;
-    position:fixed;
-    z-index:1;
 }
 
 .navigation {
     padding: 1%;
     background-color: rgba(105,105,105,0.9);
     border-bottom: 1px solid black;
-    margin-top: -5px;
+    margin-top: -5px; 
+    position:fixed-top;
+    z-index:1;
 }
 
 .navigation li a {
