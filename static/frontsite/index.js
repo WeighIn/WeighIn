@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	$('.fa').hover(
 		function() {
-			$(this).addClass('hover');
+			$(this).css('color', 'gray');
 		},
 		function() {
-			$(this).removeClass('hover');
+			$(this).css('color', 'white');
 		}
 
 	});
