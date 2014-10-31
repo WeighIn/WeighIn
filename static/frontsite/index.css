@@ -114,7 +114,8 @@ body {
     border-bottom: 1px solid black;
     margin-top: -5px; 
     position:fixed;
-    z-index:1;
+    z-index:20;
+    width:100%;
 }
 .hover {
     color:rgb(75,75,75);
