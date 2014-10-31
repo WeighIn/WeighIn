@@ -1,10 +1,9 @@
 $(document).ready(function() {
-	$(".fa").on({
-    	mouseenter(function () {
-      	 	$(this).css("color", "gray");
-    	}),
-    	mouseleave(function () {
-       		$(this).css("color", "white");
-    	});
-	});
+	$('.fa').hover(
+		function() {
+			$(this).css("color", "gray");
+		},function() {
+			$(this).css("color", "white");
+		});
 });
+
