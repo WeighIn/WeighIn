@@ -126,6 +126,7 @@ body {
 
 .fa {
     color: white;
+    opacity:1.0;
     font-size: 1.7em;
 }
 .active {

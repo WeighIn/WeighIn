@@ -1,9 +1,9 @@
 $(document).ready(function() {
-	$('.fa').hover(
+	$('.navigation .fa').hover(
 		function() {
-			$(this).css("color", "gray");
+			$(this).css("opacity", "0.7");
 		},function() {
-			$(this).css("color", "white");
+			$(this).css("opacity", "1.0");
 		});
 });
 
