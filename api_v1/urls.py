@@ -6,19 +6,25 @@ urlpatterns = patterns('',
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^docs/', include('rest_framework_swagger.urls')),
 
-    url(r'^account/?$', views.UserAccount.as_view()),
-
-    url(r'^tasks', include([
-#        url(r'^/?$', views.Tasks.as_view()),
-
-#        url(r'^/(?P<tid>[0-9]+)/?$', views.TaskSelect.as_view()),
+    url(r'^user', include([
+        url(r'^/?$', views.UserAccount.as_view()),
     ])),
 
-    url(r'^results', include([
-#        url(r'^/?$', views.Results.as_view()),
+    url(r'^app/(?P<app_id>[0-9]+)', include([
+        url(r'^/?$', views.ApplicationAccount.as_view()),
 
-#        url(r'^/(?P<rid>[0-9]+)/?$', views.ResultSelect.as_view()),
+        url(r'^/tasks', include([
+            url(r'^/?$', views.ApplicationTasks.as_view()),
 
-#        url(r'^/task/(?P<tid>[0-9]+)/?$', views.ResultsTaskSelect.as_view()),
+            url(r'^/(?P<task_id>[0-9]+)/?$', views.ApplicationTaskSelect.as_view()),
+        ])),
+
+        url(r'^/results', include([
+            url(r'^/?$', views.ApplicationResults.as_view()),
+
+            url(r'^/(?P<result_id>[0-9]+)/?$', views.ApplicationResultSelect.as_view()),
+
+            url(r'^/task/(?P<task_id>[0-9]+)/?$', views.ApplicationResultsTaskSelect.as_view()),
+        ])),
     ])),
 )

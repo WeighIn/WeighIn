@@ -29,12 +29,37 @@ class UserAccount(generics.RetrieveUpdateDestroyAPIView):
         return get_user(self)
 
 
+class ApplicationAccount(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Application.objects.all()
+    serializer_class = ApplicationSerializer
+    lookup_field = 'app_id'
+
+
 class ApplicationTasks(generics.ListAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    lookup_field = 'app'
+    lookup_field = 'app_id'
 
 
 class ApplicationTaskSelect(generics.RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    lookup_field = 'task_id'
+
+
+class ApplicationResults(generics.ListAPIView):
+    queryset = Result.objects.all()
+    serializer_class = ResultSerializer
+    lookup_field = 'app_id'
+
+
+class ApplicationResultsTaskSelect(generics.ListAPIView):
+    queryset = Result.objects.all()
+    serializer_class = ResultSerializer
+    lookup_field = 'task_id'
+
+
+class ApplicationResultSelect(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Result.objects.all()
+    serializer_class = ResultSerializer
+    lookup_field = 'result_id'

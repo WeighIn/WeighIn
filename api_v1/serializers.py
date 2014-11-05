@@ -17,29 +17,27 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name')
-        read_only_fields = ('id', 'username')
+        fields = ('username', 'email', 'password', 'first_name', 'last_name')
+        read_only_fields = ('username',)
         write_only_fields = ('password',)
 
 
 class ApplicationSerializer(serializers.ModelSerializer):
-    owners = serializers.SlugRelatedField(many=True, read_only=True, slug_field='username')
-
     class Meta:
         model = Application
-        fields = ('points', 'owners')
-        read_only_fields = ('points',)
+        fields = ('app_id', 'points')
+        read_only_fields = ('app_id', 'points')
 
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ('id', 'app', 'worth', 'accuracy', 'data')
-        read_only_fields = ('id', 'app')
+        fields = ('task_id', 'app_id', 'worth', 'accuracy', 'data')
+        read_only_fields = ('task_id', 'app_id')
 
 
 class ResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = Result
-        fields = ('id', 'task', 'user', 'submit_date', 'data')
-        read_only_fields = ('id', 'task', 'user', 'submit_date', 'data')
+        fields = ('result_id', 'task_id', 'user_id', 'submit_date', 'data')
+        read_only_fields = ('result_id', 'task_id', 'user_id', 'submit_date', 'data')

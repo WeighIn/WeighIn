@@ -4,13 +4,13 @@ from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, related_name="Profile")
+    user_id = models.OneToOneField(User, related_name="Profile")
     points = models.BigIntegerField(default=0)
 
 
 class Application(models.Model):
+    app_id = models.BigIntegerField(primary_key=True)
     weight = models.IntegerField(default=1)
-    owners = models.ManyToManyField(User)
     points = models.BigIntegerField(default=0)
 
     class Meta:
@@ -22,7 +22,8 @@ class Application(models.Model):
 
 
 class Task(models.Model):
-    user = models.ForeignKey(User, related_name="Tasks")
+    task_id = models.BigIntegerField(primary_key=True)
+    user_id = models.ForeignKey(User, related_name="Tasks")
     worth = models.FloatField()
     accuracy = models.IntegerField()
     data = models.TextField()
@@ -36,8 +37,10 @@ class Task(models.Model):
 
 
 class Result(models.Model):
-    task = models.ForeignKey(Task, related_name="Results")
-    user = models.ForeignKey(User, related_name="Results")
+    result_id = models.BigIntegerField(primary_key=True)
+    app_id = models.ForeignKey(Application, related_name="Results")
+    task_id = models.ForeignKey(Task, related_name="Results")
+    user_id = models.ForeignKey(User, related_name="Results")
     submit_date = models.DateField(auto_now_add=True)
     data = models.TextField()
 
