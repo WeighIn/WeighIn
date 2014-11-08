@@ -1,7 +1,7 @@
 var ctx;
 var i = 0; //counter for image array[]
-var count = 0; //count for number of plays
-
+var gameCount = 0; //count for number of plays
+var stage = 0; // 0-starting screen 1-image tagging 2-major association 3-next game (?)
 
 
 var imgArray = new Array();
@@ -11,7 +11,8 @@ var majorArray = new Array();
 majorArray = ["Computer Science", "English", "Pre-Med"]; //eventually get from backend from a queue (?)
 
 var attributes = new Array();
-attributes = ["Brunette", "Blonde", "Ginger"];
+attributes = ["Brunette", "Blonde", "Ginger"];            //eventually get from backend from a queue (?)
+
 
 canvas.addEventListener("mousedown", getPosition, false);
 
@@ -27,36 +28,6 @@ function Timer(settings)
     return this;
 }
  
-Timer.prototype = 
-{   
-    run: function()
-    {
-        var $this = this;
-         
-        this.settings.run();
-        this.timeInit += this.interval;
- 
-        this.timer = setTimeout(
-            function(){$this.run()}, 
-            this.timeInit - (new Date).getTime()
-        );
-    },
-     
-    start: function()
-    {
-        if(this.timer == null)
-        {
-            this.timeInit = (new Date).getTime();
-            this.run();
-        }
-    },
-     
-    stop: function() 
-    {
-        clearTimeout(this.timer);
-        this.timer = null;
-    }
-}
 
 
 function clearCanvas(cnv) {
@@ -94,26 +65,57 @@ function getPosition(event)
     x-=canvas.offsetLeft;
     y-=canvas.offsetTop;
 
-    if(y >= 450) //if one of the buttons was clicked
+    if(stage==0 && (x>=500/3 && x<=1000/3) && (y>=350 && y<=400)){
+        stage=1;
+    }
+
+    if(y >= 450 && (stage==2 || stage==1)) //if one of the buttons was clicked
     {
+        gameCount++;
     	var resultArray = new Array(); //index 0 is image, index 1 is the user's choice
+        if(stage == 1){
+            resultArray[0] = attributes[i];
+        }
     	resultArray[0] = imgArray[i]; // ^^^^^^^^^^^^^^^^^
     	clearCanvas(canvas); //clears the canvas to prevent using too much memory
+
     	
     	
     	if(i==imgArray.length - 1) //resets image loop if past the last image
     		i=0;
     	else
     		i++;
-
+        if(stage==2){
     	
-    	if(x <= 500/3) //button 1 was clicked
-    		resultArray[1] = majorArray[0];
-    		
-    	else if((x > 500/3) && (x <= 1000/3)) //button 2 was clicked
-    		resultArray[1] = majorArray[1];
-    	else if((x >= 1000/3) && (x <= 500)) //button 3 was clicked
-    		resultArray[1] = majorArray[2];
+        	if(x <= 500/3) { //button 1 was clicked
+        		resultArray[1] = majorArray[0];
+        	}
+        	else if((x > 500/3) && (x <= 1000/3)) { //button 2 was clicked
+        		resultArray[1] = majorArray[1];
+            }
+        	else if((x >= 1000/3) && (x <= 500)) {//button 3 was clicked
+        		resultArray[1] = majorArray[2];
+            }
+        }
+        if(stage==1) {
+             if(x <= 500/3) { //button 1 was clicked
+                resultArray[1] = attributes[0];
+            }
+            else if((x > 500/3) && (x <= 1000/3)) { //button 2 was clicked
+                resultArray[1] = attributes[1];
+            }
+            else if((x >= 1000/3) && (x <= 500)) {//button 3 was clicked
+                resultArray[1] = attributes[2];
+            }
+        }
+        if(gameCount==5 && stage == 1) {
+            stage=2;
+            gameCount=0;
+        }
+        if(gameCount==20 && stage == 2) {
+            //stage = 3;
+            gameCount=0;
+        }
     	
     	console.log(resultArray); //replace with "send" resultArray
     } 
@@ -129,30 +131,74 @@ $(document).ready(function(){
 	var w = $("#canvas").width();
 	var h = $("#canvas").height();
 
-	var stage = 2;
 	
-	function amountTime() 
-	{
-		var timeNow = Date.now() - timeSinceStart;
-		console.log(timeNow);
-	}
+
 
 	function init()
 	{
 		//every 90ms
 		if(typeof game_loop != "undefined") clearInterval(game_loop);
 		game_loop = setInterval(paint, 90);
-
-		var timerLoop = window.setInterval(amountTime(), 100);
-
 	}
 	
 	init();
 
-	
+	function paintClickBox(x,y,width,height, color){
+        ctx.fillStyle = color;
+        ctx.fillRect(x,y,width,height);
+    }
+
+    function paintButtonText(text,x,y,color){
+        ctx.fillStyle=color;
+        ctx.font="20px Lato";
+        ctx.textAlign = "center";
+        ctx.fillText(text,x,y,450/3); //(text,x,y,maxWidth)
+    }
 
 	function paint()
 	{
+        if(stage == 0)
+        { //clear canvas to avoid filling memory
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            var image = new Image();
+            ctx.drawImage(image,0,0);
+            ctx.fillStyle="#000000";
+            ctx.font="100px Lato";
+            ctx.textAlign = "center";
+            ctx.fillText("Welcome",250,250,300); //(text,x,y,maxWidth)
+            paintClickBox(500/3,350,500/3,50, "#999999");
+            ctx.strokeStyle="#000000";
+            ctx.strokeRect(500/3,350,500/3,50);
+            paintButtonText("START",1500/6,380,"#000000");
+
+        }
+        if(stage == 1)
+        {
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); //clear canvas to avoid filling memory
+
+            var image = new Image();
+            image.src = imgArray[i];
+            //drawing a bunch of stuff
+             ctx.drawImage(image,0,0);
+
+            paintClickBox(0,450,500/3,50,"#FF0000");                        //box 1
+            paintButtonText(attributes[0],500/6,480,"#FFFFFF");
+
+            paintClickBox(500/3,450,500/3,50,"#00FF00");                    //box 2
+            paintButtonText(attributes[1],1500/6,480,"#FFFFFF");
+
+            paintClickBox(1000/3,450,500/3,50,"#0000FF");                   //box 3
+            paintButtonText(attributes[2],2500/6,480,"#FFFFFF");
+
+            //add top bar that shows progress for each stage (5 for stage 1 and 20 for stage 2)
+
+            ctx.fillStyle="#FFFFFF";
+            ctx.fillRect(0, 0, 500, 40);
+            ctx.strokeStyle="#000000";
+            ctx.strokeRect(0, 0, 500, 40);
+            ctx.fillStyle="#1FC3AD";
+            ctx.fillRect(0, 0, gameCount*100, 40);
+        }
 		if(stage == 2) 
 		{
 		    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); //clear canvas to avoid filling memory
@@ -160,28 +206,27 @@ $(document).ready(function(){
 			var image = new Image();
 			image.src = imgArray[i];
 			//drawing a bunch of stuff
-			ctx.drawImage(image,0,0);
-			ctx.fillStyle="#FF0000";
-			ctx.fillRect(0, 450, 500/3, 50);
-			ctx.fillStyle="#FFFFFF";
-			ctx.font="20px Lato";
-			ctx.textAlign="center";
-			ctx.fillText(majorArray[0],500/6,480, 450/3);
-			ctx.fillStyle="#00ff00";
-			ctx.fillRect(500/3, 450, 500/3, 50);
-			ctx.fillStyle="#FFFFFF";
-			ctx.font="20px Lato";
-			ctx.textAlign="center";
-			ctx.fillText(majorArray[1],1500/6,480, 450/3);
-			ctx.fillStyle="#0000FF";
-			ctx.fillRect(1000/3, 450, 500/3, 50);
-			ctx.fillStyle="#FFFFFF";
-			ctx.font="20px Lato";
-			ctx.textAlign="center";
-			ctx.fillText(majorArray[2],2500/6,480, 450/3);
+			 ctx.drawImage(image,0,0);
+
+            paintClickBox(0,450,500/3,50,"#FF0000");                        //box 1
+            paintButtonText(majorArray[0],500/6,480,"#FFFFFF");
+
+            paintClickBox(500/3,450,500/3,50,"#00FF00");                    //box 2
+            paintButtonText(majorArray[1],1500/6,480,"#FFFFFF");
+
+            paintClickBox(1000/3,450,500/3,50,"#0000FF");                   //box 3
+            paintButtonText(majorArray[2],2500/6,480,"#FFFFFF");
 
 			//add top bar that shows progress for each stage (5 for stage 1 and 20 for stage 2)
+
+            ctx.fillStyle="#FFFFFF";
+            ctx.fillRect(0, 0, 500, 40);
+            ctx.strokeStyle="#000000";
+            ctx.strokeRect(0, 0, 500, 40);
+            ctx.fillStyle="#1FC3AD";
+            ctx.fillRect(0, 0, gameCount*25, 40);
 		}
+
 
 
 
