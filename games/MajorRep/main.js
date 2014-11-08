@@ -5,7 +5,7 @@ var count = 0; //count for number of plays
 
 
 var imgArray = new Array();
-imgArray = ["gabebob.jpg", "gabebob1.jpg", "gabebob2.jpg", "gabebob3.jpg", "gabebob4.jpg", "gabebob5.jpg"]; //eventually get from backend
+imgArray = ["images/gabebob.jpg", "images/gabebob1.jpg", "images/gabebob2.jpg", "images/gabebob3.jpg", "images/gabebob4.jpg", "images/gabebob5.jpg"]; //eventually get from backend
 
 var majorArray = new Array();
 majorArray = ["Computer Science", "English", "Pre-Med"]; //eventually get from backend from a queue (?)
