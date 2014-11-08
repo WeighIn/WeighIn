@@ -2,7 +2,7 @@ var ctx;
 var i = 0; //counter for image array[]
 var gameCount = 0; //count for number of plays
 var stage = 0; // 0-starting screen 1-image tagging 2-major association 3-next game (?)
-
+var colorChoice =  (Math.random() * 6)|0; //determines which pallette
 
 var imgArray = new Array();
 imgArray = ["images/gabebob.jpg", "images/gabebob1.jpg", "images/gabebob2.jpg", "images/gabebob3.jpg", "images/gabebob4.jpg", "images/gabebob5.jpg"]; //eventually get from backend
@@ -13,7 +13,16 @@ majorArray = ["Computer Science", "English", "Pre-Med"]; //eventually get from b
 var attributes = new Array();
 attributes = ["Brunette", "Blonde", "Ginger"];            //eventually get from backend from a queue (?)
 
-
+var color = new Array(5); //array of arrays of different color pallets
+for(var j=0; j<10; j++){
+    color[i]= new Array(3);
+}
+color[0] = ["#92B2BD", "#BECCBF", "#E0DCB6"]; // SUN'S GENTLE RAYS
+color[1] = ["#FFBE5C", "#FE9F4A", "#FE4A4A"]; //NOVEMBER LEAVES
+color[2] = ["#65DBB9", "#1FABA8", "#006661"]; //TEAL AND GOLD
+color[3] = ["#B27FCE", "#D679B2", "#EAB2CD"]; //PURPLE
+color[4] = ["#02BE89", "#1FF8AC", "#A7DA5C"]; //GREEN
+color[5] = ["#93A3B0", "#121631", "#555A6D"]; //GRAYS
 canvas.addEventListener("mousedown", getPosition, false);
 
 function Timer(settings)
@@ -71,6 +80,7 @@ function getPosition(event)
 
     if(y >= 450 && (stage==2 || stage==1)) //if one of the buttons was clicked
     {
+        colorChoice = (Math.random() * 6)|0; //picks a pallete
         gameCount++;
     	var resultArray = new Array(); //index 0 is image, index 1 is the user's choice
         if(stage == 1){
@@ -108,11 +118,11 @@ function getPosition(event)
                 resultArray[1] = attributes[2];
             }
         }
-        if(gameCount==5 && stage == 1) {
+        if(gameCount==5 && stage == 1) { //transition to stage 2
             stage=2;
             gameCount=0;
         }
-        if(gameCount==20 && stage == 2) {
+        if(gameCount==20 && stage == 2) { //transition to stage 3
             //stage = 3;
             gameCount=0;
         }
@@ -157,7 +167,7 @@ $(document).ready(function(){
 
 	function paint()
 	{
-        if(stage == 0)
+        if(stage == 0) //welcome screen
         { //clear canvas to avoid filling memory
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
             var image = new Image();
@@ -180,19 +190,19 @@ $(document).ready(function(){
             image.src = imgArray[i];
             //drawing a bunch of stuff
              ctx.drawImage(image,0,0);
-
-            paintClickBox(0,450,500/3,50,"#FF0000");                        //box 1
+            
+            paintClickBox(0,450,500/3,50,color[colorChoice][0]);                        //box 1
             paintButtonText(attributes[0],500/6,480,"#FFFFFF");
 
-            paintClickBox(500/3,450,500/3,50,"#00FF00");                    //box 2
+            paintClickBox(500/3,450,500/3,50,color[colorChoice][1]);                    //box 2
             paintButtonText(attributes[1],1500/6,480,"#FFFFFF");
 
-            paintClickBox(1000/3,450,500/3,50,"#0000FF");                   //box 3
+            paintClickBox(1000/3,450,500/3,50,color[colorChoice][2]);                   //box 3
             paintButtonText(attributes[2],2500/6,480,"#FFFFFF");
 
             //add top bar that shows progress for each stage (5 for stage 1 and 20 for stage 2)
 
-            ctx.fillStyle="#FFFFFF";
+            ctx.fillStyle="#BBBBBB";
             ctx.fillRect(0, 0, 500, 40);
             ctx.strokeStyle="#000000";
             ctx.strokeRect(0, 0, 500, 40);
@@ -208,18 +218,18 @@ $(document).ready(function(){
 			//drawing a bunch of stuff
 			 ctx.drawImage(image,0,0);
 
-            paintClickBox(0,450,500/3,50,"#FF0000");                        //box 1
+            paintClickBox(0,450,500/3,50,color[colorChoice][0]);                        //box 1
             paintButtonText(majorArray[0],500/6,480,"#FFFFFF");
 
-            paintClickBox(500/3,450,500/3,50,"#00FF00");                    //box 2
+            paintClickBox(500/3,450,500/3,50,color[colorChoice][1]);                    //box 2
             paintButtonText(majorArray[1],1500/6,480,"#FFFFFF");
 
-            paintClickBox(1000/3,450,500/3,50,"#0000FF");                   //box 3
+            paintClickBox(1000/3,450,500/3,50,color[colorChoice][2]);                   //box 3
             paintButtonText(majorArray[2],2500/6,480,"#FFFFFF");
 
 			//add top bar that shows progress for each stage (5 for stage 1 and 20 for stage 2)
 
-            ctx.fillStyle="#FFFFFF";
+            ctx.fillStyle="#BBBBBB";
             ctx.fillRect(0, 0, 500, 40);
             ctx.strokeStyle="#000000";
             ctx.strokeRect(0, 0, 500, 40);
