@@ -20,13 +20,15 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "frontsite/main.css" %}">
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src="{% static "frontsite/index.js" %}"></script>
 </head>
 
 <body>
     <!-- nav tabs w/o bootstrap -->
 <div class"navigation">
-    <ul class="navbar">
-        <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
+    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
+    <ul class="navbar">        
         <li> <a  href="/"> <i class="fa fa-home"></i></a></li>
         <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
         <li> <a href="#"> <i class="fa fa-send-o active"></i></a></li>

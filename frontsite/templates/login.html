@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel="stylesheet" type="text/css" href="{% static "frontsite/login.css" %}">
     <link rel="stylesheet" href="{% static "frontsite/animate.css" %}">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src="{% static "frontsite/index.js" %}"></script>
     <!-- <script src = "{% static "frontsite/events.js" %}"></script> -->
     
 </head>
@@ -28,10 +31,10 @@
 <body>
     <!-- nav tabs w/o bootstrap -->
 <div lass="navigation">
+    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
     <ul class="navbar">
-        <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
         <li> <a href="/"> <i class="fa fa-home"></i></a></li>
-        <li> <a href="#"> <i class="fa fa-user active"></i></a></li>
+        <li> <a href=""> <i class="fa fa-user active"></i></a></li>
         <li> <a href="/main"> <i class="fa fa-send-o"></i></a></li>
     </ul>
 </div>
