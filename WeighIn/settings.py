@@ -69,7 +69,14 @@ WSGI_APPLICATION = 'WeighIn.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django_mongodb_engine',
+        'NAME': 'weighin_dev',
+        'HOST': 'dbs.weighin.me',
+        'PORT': 8080,
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
