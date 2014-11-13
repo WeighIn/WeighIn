@@ -6,9 +6,7 @@ urlpatterns = patterns('',
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^docs/', include('rest_framework_swagger.urls')),
 
-    url(r'^user', include([
-        url(r'^/?$', views.UserAccount.as_view()),
-    ])),
+    url(r'^user/?$', views.UserAccount.as_view()),
 
     url(r'^app/(?P<app_id>[0-9]+)', include([
         url(r'^/?$', views.ApplicationAccount.as_view()),

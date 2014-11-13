@@ -20,7 +20,7 @@ def get_user(view):
     return user
 
 
-class UserAccount(generics.RetrieveUpdateDestroyAPIView):
+class UserAccount(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPIView):
     permission_classes = (DjangoModelPermissions,)
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -28,11 +28,8 @@ class UserAccount(generics.RetrieveUpdateDestroyAPIView):
     def get_object(self, queryset=None):
         return get_user(self)
 
-    def create(self, request):
-        pass
 
-
-class ApplicationAccount(generics.RetrieveUpdateDestroyAPIView):
+class ApplicationAccount(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPIView):
     permission_classes = (DjangoModelPermissions,)
     queryset = Application.objects.all()
     serializer_class = ApplicationSerializer
@@ -46,7 +43,7 @@ class ApplicationTasks(generics.ListAPIView):
     lookup_field = 'app_id'
 
 
-class ApplicationTaskSelect(generics.RetrieveUpdateDestroyAPIView):
+class ApplicationTaskSelect(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPIView):
     permission_classes = (DjangoModelPermissions,)
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
@@ -67,7 +64,7 @@ class ApplicationResultsTaskSelect(generics.ListAPIView):
     lookup_field = 'task_id'
 
 
-class ApplicationResultSelect(generics.RetrieveUpdateDestroyAPIView):
+class ApplicationResultSelect(generics.RetrieveUpdateDestroyAPIView, generics.CreateAPIView):
     permission_classes = (DjangoModelPermissions,)
     queryset = Result.objects.all()
     serializer_class = ResultSerializer
