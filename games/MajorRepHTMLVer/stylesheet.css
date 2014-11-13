@@ -1,0 +1,56 @@
+
+* {
+    font-family: 'Lato';
+    font-size: 1.05em;
+    font-weight: 300;
+}
+
+.main-wrapper {
+    margin-top: 5%;
+}
+.col-md-3{
+    max-width:167px;
+}
+
+.options{   
+    color: white;
+    padding-top: 5px;
+    font-size: 1em;
+    font-weight: 400;
+    position:relative;
+    top:425px;  
+}
+.options p {
+   margin: 0;
+    position: absolute;               /* 2 */
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+.option1 {
+    
+    background-color: darkblue;
+    height: 50px;
+}
+.option2 {
+
+    background-color: darkgreen;
+    height: 50px;
+}
+.option3 {
+
+    background-color: darkred;
+    height: 50px;
+}
+
+.row {
+    margin: 0;
+}
+
+.img {
+    max-width: 500px;
+    max-height: 500px;
+    position:absolute;
+}
