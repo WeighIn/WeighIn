@@ -10,6 +10,7 @@ class Profile(models.Model):
 
 class Application(models.Model):
     app_id = models.BigIntegerField(primary_key=True)
+    user_id = models.OneToOneField(User, related_name="Application")  # Owner
     weight = models.IntegerField(default=1)
     points = models.BigIntegerField(default=0)
 
@@ -23,7 +24,7 @@ class Application(models.Model):
 
 class Task(models.Model):
     task_id = models.BigIntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, related_name="Tasks")
+    app_id = models.ForeignKey(Application, related_name="Tasks")
     worth = models.FloatField()
     accuracy = models.IntegerField()
     data = models.TextField()
@@ -38,7 +39,6 @@ class Task(models.Model):
 
 class Result(models.Model):
     result_id = models.BigIntegerField(primary_key=True)
-    app_id = models.ForeignKey(Application, related_name="Results")
     task_id = models.ForeignKey(Task, related_name="Results")
     user_id = models.ForeignKey(User, related_name="Results")
     submit_date = models.DateField(auto_now_add=True)

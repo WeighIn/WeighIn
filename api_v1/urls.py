@@ -14,7 +14,11 @@ urlpatterns = patterns('',
         url(r'^/tasks', include([
             url(r'^/?$', views.ApplicationTasks.as_view()),
 
-            url(r'^/(?P<task_id>[0-9]+)/?$', views.ApplicationTaskSelect.as_view()),
+            url(r'^/(?P<task_id>[0-9]+)', include([
+                url(r'^/?$',  views.ApplicationTaskSelect.as_view()),
+
+                url(r'^/results/?$', views.ApplicationResultsTaskSelect.as_view()),
+            ])),
         ])),
 
         url(r'^/results', include([
