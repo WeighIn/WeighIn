@@ -1,7 +1,6 @@
 
 * {
     font-family: 'Lato';
-    font-size: 1.05em;
     font-weight: 300;
 }
 
@@ -15,18 +14,18 @@
 .options{   
     color: white;
     padding-top: 5px;
-    font-size: 1em;
     font-weight: 400;
     position:relative;
     top:425px;  
 }
 .options p {
-   margin: 0;
+    margin: 0;
     position: absolute;               /* 2 */
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    max-width:150px;
 
 }
 .option1 {
