@@ -1,0 +1,194 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> Weigh In </title>
+
+    <!-- Metas -->
+    <meta type="author" content="Weigh In"/>
+    <meta type="description" content="Gamifying crowdsourcing"/>
+    <meta name="viewport" content="initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta http-eqiv="content-type" content="text/html; charset=utf-8"/>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,700"/>
+    <!--<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700'/>-->
+    <!-- bootstrap, font awesome and index.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "frontsite/aboutus.css" %}">
+    <link rel="stylesheet" href="{% static "frontsite/animate.css" %}">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src="{% static "frontsite/index.js" %}"></script>
+</head>
+<body>
+<!-- nav tabs w/o bootstrap -->
+<div class="navigation">
+    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
+    <ul class="navbar">
+        <li> <a href="/"> <i class="fa fa-home"></i></a></li>
+        <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
+        <li> <a href="/main"> <i class="fa fa-send-o"></i></a></li>
+    </ul>
+</div>
+<!-- nav tabs end -->
+    <div class="container-fluid animated fadeIn">
+        <div class="row header">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="head"> Hi, We're <span id="name">WeighIn</span>.</div>
+                <div class="row main-content">
+                    <legend> What we do</legend>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <!--<legend> What we do</legend>-->
+                        <p>Started as a project in CS196, WeighIn aims to further the field of microtasks through gamification. We are a group of twelve students at UIUC dedicated to making it happen.</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row team">
+                    <legend> The Team</legend>
+                    <div class="row rowone">
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Radhir Kothuri</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/Radhir.png" alt="" %}"/>
+                                <p>Hi I'm <em>Rad</em>hir (haha get it?)</p>
+                                <p>Hobbies: Binge watching TV shows, solving puzzles on Project Euler, Swimming, Ping Pong</p> 
+                                <p>CS Interests: Artificial Intelligence, Human-computer Interaction, Crowdsourcing, Computer Vision, front-end development</p>
+                                <p>Best Invention of All Time: The Telephone<p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Alejandro Gonzalez</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/Alejandro.png" alt="" %}" alt=""/>
+                                <p>My name is Alejandro. I'm an aspiring computer scientist from the great state of Illinois. I like to do anything that's computers.</p>
+                                <p>Hobbies: Soccer, Moutain Biking, Running, Badminton</p>
+                                <p>Interests in CS:Software Engineering, Networking, and Web Design</p>
+                                <p>I Think the Best Invention of All Time Is: The Wheel </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Kazuhiro Uchikata</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/Kazu.png" alt="" %}"/>
+                                <p>Hi, My name is Kazu. I'm an international student from Japan, studying at the University of Illinois.</p>
+                                <p>Hobbies:Drums, Gymnastics, Frisbee, Gaming</p>
+                                <p>Interests in CS: Artificial Intelligence, Crowdsourcing, Bioinformatics</p>
+                                <p>I Think the Best Invention of All Time Is:Yet to come (think about it)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowtwo">
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Harshay Shah</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/Harshay.png" alt="" %}" alt=""/>
+                                <p>Hello world. I study CS & Stats at UIUC.</p>
+                                <p>Hobbies: Tennis, Billiards, Reading Non-Fiction</p>
+                                <p>Interests in CS: Data mining, Natural Language Processing</p>
+                                <p>I Think the Best Invention of All Time Is: The Transistor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Andrew Breckenridge</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/" alt="" %}" alt=""/>
+                                <p>Hey, I do the iOS, Web, and random research I think is interesting</p>
+                                <p>Hobbies: CSing and not CSing</p>
+                                <p>Interests in CS: The CS</p>
+                                <p>I Think the Best Invention of All Time Is:the S of C</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Andrew Kuznetsov</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/AndrewK.png" alt="" %}" alt=""/>
+                                <p>I believe that crazy things happen when people come together unified by a common goal. And like many, I believe that this unity is the future of computation, whether it is tagging phrases or digitizing books. </p>
+                                <p>Hobbies: Ultimate, cycling, creative solutions to hard problems.</p>
+                                <p>Interests in CS: Crowd-sourcing, Human Computation, Games With a Purpose, Resource allocation,  Collaborative programming, Economics Simulations</p>
+                                <p>I Think the Best Invention of All Time Is: Comedy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowthree">
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Dylan Plecki</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/" alt="" %}" alt=""/>
+                                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quas?</p>
+                                <p>Hobbies:</p>
+                                <p>Interests in CS</p>
+                                <p>I Think the Best Invention of All Time Is:</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Gaurav Pasari</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/" alt="" %}" alt=""/>
+                                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quas?</p>
+                                <p>Hobbies:</p>
+                                <p>Interests in CS</p>
+                                <p>I Think the Best Invention of All Time Is:</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Krishna Mittal</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/" alt="" %}" alt=""/>
+                                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quas?</p>
+                                <p>Hobbies:</p>
+                                <p>Interests in CS</p>
+                                <p>I Think the Best Invention of All Time Is:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowfour">
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Scott Cilento</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/Scott.png" alt="" %}"/>
+                                <p>My name is Scott. I'm from here in Illinois. I currently study Mathematics and Computer Science here at the University of Illinois.</p>
+                                <p>Hobbies: Tinkering with things, Frisbee,  Singing, Music, and Anything Science.</p>
+                                <p>ICS Interests: Crowdsourcing, Artificial Intelligence, Web Development, and Systems Security.</p>
+                                <p>I Think the Best Invention of All Time Is:The Transistor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Paul Novacovici</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/" alt="" %}" alt=""/>
+                                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quas?</p>
+                                <p>Hobbies:</p>
+                                <p>Interests in CS</p>
+                                <p>I Think the Best Invention of All Time Is:</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person text-center">
+                                <h1>Andrew Thieck</h1>
+                                <img class="img-thumbnail" src="{%static "frontsite/" alt="" %}" alt=""/>
+                                <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quas?</p>
+                                <p>Hobbies:</p>
+                                <p>Interests in CS</p>
+                                <p>I Think the Best Invention of All Time Is:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+language: python
+
+# Notification Preferences
+notifications:
+  email: false
+  slack: weighin:LF7vfHWDvYn0Uijaoj6ZDg6e
+
+# Set Test Versions
+python:
+#  - "2.6"
+  - "2.7"
+#  - "3.2"
+#  - "3.3"
+#  - "3.4"
+
+# Set Cache Options
+cache:
+  directories:
+    - $HOME/.pip-cache/
+    - /home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages
+
+# Install Dependencies
+install:
+  - "pip install -r requirements.txt --download-cache $HOME/.pip-cache"
+
+# Run Tests
+script:
+  - |
+    if [ ${TRAVIS_BRANCH} == master ]; then
+      BUILD_ENV=prod
+    elif [ ${TRAVIS_BRANCH} == prod_web ]; then
+      BUILD_ENV=prod_web
+    elif [ ${TRAVIS_BRANCH} == prod_api ]; then
+      BUILD_ENV=prod_api
+    else
+      BUILD_ENV=dev
+    fi
+    export BUILD_ENV
+  - python manage.py test
+
+# Deploy to Heroku
+deploy:
+  provider: heroku
+  strategy: api
+  api_key: "bc7d0355-330e-4ca4-af3b-4d6055993b43"
+  app:
+    master: weighin-app
+    develop: dev-weighin-app
+    prod_web: web-prod-weighin-app
+    prod_api: api-prod-weighin-app
+  run:
+      - "python manage.py syncdb"

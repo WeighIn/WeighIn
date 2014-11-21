@@ -1,0 +1,64 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> My Account </title>
+    
+    <!-- Metas -->
+    <meta type="author" content="Weigh In"/>
+    <meta type="description" content="Gamifying crowdsourcing"/>
+    <meta name="viewport" content="initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta http-eqiv="content-type" content="text/html; charset=utf-8"/>
+    
+    <!-- Links -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300"/>
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:300'/>    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "frontsite/main.css" %}">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src="{% static "frontsite/index.js" %}"></script>
+</head>
+
+<body>
+    <!-- nav tabs w/o bootstrap -->
+<div class"navigation">
+    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
+    <ul class="navbar">        
+        <li> <a  href="/"> <i class="fa fa-home"></i></a></li>
+        <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
+        <li> <a href="#"> <i class="fa fa-send-o active"></i></a></li>
+    </ul>
+</div>
+
+    <!-- nav tabs end -->
+
+    <div class="container-fluid animated main">
+        <div class="row text-center photo-nav">
+            <div class="col-md-3"> 
+                <p class="arrow"><</p>
+            </div>
+            <div class="col-md-6">
+                <p class="image"><img class="cat" src="thomas.jpg" alt=""></p>
+            </div>
+            <div class="col-md-3">
+                <p class="arrow">></p>
+            </div>
+        </div> <!-- row end -->
+    
+        <div class="row text-center buttons">
+            <div class="btn-group">
+              <button class="button-secondary pure-button ">Computer Science</button>
+              <button class="pure-button button-success">Business</button>
+              <button class="pure-button button-warning">Mechanical Engineering</button>
+            </div>
+        </div> <!-- row end -->
+
+
+    </div>
+</body>
+</html>

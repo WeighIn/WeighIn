@@ -1,0 +1,182 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<head>
+    <title> Weigh In </title>
+
+    <!-- Metas -->
+    <meta type="author" content="Weigh In"/>
+    <meta type="description" content="Gamifying crowdsourcing"/>
+    <meta name="viewport" content="initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta http-eqiv="content-type" content="text/html; charset=utf-8"/>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700"/>
+    <!-- bootstrap, font awesome and index.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "frontsite/index.css" %}">
+    <link rel="stylesheet" href="{% static "frontsite/animate.css" %}">
+     
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src="{% static "frontsite/index.js" %}"></script>
+    <!--<script src="../../static/frontsite/indexapp.js"></script>-->
+    <script>
+        $(document).ready(function() {
+            $('body .mainrow').css({'height':($(window).height()-120)+'px'});
+        });
+    </script>
+
+</head>
+
+<body>
+<!-- nav tabs w/o bootstrap -->
+<div class ="navigation">
+    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
+    <ul class="navbar">
+        <li> <a  href=""> <i class="fa fa-home active"></i></a></li>
+        <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
+        <li> <a href="/main"> <i class="fa fa-send-o"></i></a></li>
+
+    </ul>
+</div>
+<!-- nav tabs end -->
+<div class="content">
+    <div class = "container-fluid animated fadeIn">
+        <!-- content -->
+        <div class = "row content mainrow">
+            <div class="col-md-2"></div>
+            <div class = "col-md-10">
+                <p class="head"> Weigh In.</p>
+                <p class="subhead">Micro-tasks, Macro-fun</p>
+                <!--buttons -->
+
+                <!--<div class="btn-group">-->
+                <!--<button type="button" class="btn btn-default btn-lg">My Account</button>-->
+                <!--<button type="button" class="btn btn-default btn-lg">Get Started</button>-->
+                <!--</div>-->
+            </div>
+
+            <!--<div class="col-md-5">-->
+            <!--<!--<img class="bgimg" src="background1.png" alt=""/>-->
+            <!--</div>-->
+        </div>
+        <!-- content end-->
+
+        <div class="row threemain">
+            <div class="row threemain-heading">
+                <div class="col-md-12">
+                    <h2>We make games with a purpose</h2>
+                </div>
+            </div>
+            <div class="row threemain-main">
+
+                <div class="col-md-12">
+                    <div class="col-md-4 buy">
+                        <a href=""> <i class="fa fa-puzzle-piece fa-3x"></i></a></li>
+                        <h3>Solve</h3>
+                        <p>Be rewarded for having fun. </p>
+                    </div>
+                    <div class="col-md-4 store">
+                        <a href=""> <i class="fa fa-cloud fa-3x"></i></a></li>
+                        <h3>Host</h3>
+                        <p>Support your site while entertaining your users.</p>
+                    </div>
+                    <div class="col-md-4 spend">
+                        <a href=""> <i class="fa fa-globe fa-3x"></i></a></li>
+                        <h3>Be part of something big</h3>
+                        <p>Help the world of tech improve, one game at a time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end of mainrow-->
+
+
+<!-- buttons end -->
+<div class="footer">
+    <a href="/about/"><p>About us</p></a>
+</div>
+
+</div>
+<!-- container end -->
+
+</body>
+</html>
+
+<!--{% load staticfiles %}-->
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/html">-->
+<!--<head>-->
+    <!--<title> Weigh In </title>-->
+    <!---->
+    <!--<!-- Metas -->
+    <!--<meta type="author" content="Weigh In"/>-->
+    <!--<meta type="description" content="Gamifying crowdsourcing"/>-->
+    <!--<meta name="viewport" content="initial-scale=1"/>-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>-->
+    <!--<meta http-eqiv="content-type" content="text/html; charset=utf-8"/>-->
+    <!---->
+    <!--<!-- Fonts -->
+    <!--<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300"/>-->
+    <!--<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:300'/>    -->
+    <!--<!-- bootstrap, font awesome and index.css -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+    <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" type="text/css" href="{% static "frontsite/index.css" %}">-->
+    <!--<link rel="stylesheet" href="{% static "frontsite/animate.css" %}">-->
+
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--<script src="indexapp.js"></script>-->
+    <!---->
+<!--</head>-->
+
+<!--<body>-->
+    <!--<!-- nav tabs w/o bootstrap -->
+    <!--<ul class="navigation">-->
+        <!--<li> <a  href=""> <i class="fa fa-home active"></i></a></li>-->
+        <!--<li> <a href="/login"> <i class="fa fa-user"></i></a></li>-->
+        <!--<li> <a href="/main"> <i class="fa fa-send-o"></i></a></li>-->
+    <!--</ul>-->
+
+    <!--<!-- nav tabs end -->
+
+    <!--<div class = "container-fluid animated fadeIn main">-->
+        <!--<!-- content -->
+        <!--<div class = "row content">-->
+            <!--<div class = "col-md-1"> </div>-->
+
+            <!--<div class = "col-md-9"> -->
+                <!--<p class="head"> Weigh In.</p>-->
+                <!--<p class="subhead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+            <!--</div>-->
+
+            <!--<div class="col-md-2"></div>-->
+        <!--</div>-->
+        <!--<!-- content end-->
+
+        <!--<!-- buttons -->
+        <!--<div class="row buttons text-center">-->
+            <!--<div class="col-md-12">-->
+                <!--<div class="btn-group">-->
+                  <!--<button type="button" class="btn btn-default btn-lg">My Account</button>-->
+                  <!--<button type="button" class="btn btn-default btn-lg">Get Started</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<!-- buttons end -->
+        <!--<div class="footer">-->
+            <!--<a href="/about/"><p>About us</p></a>-->
+        <!--</div>-->
+
+    <!--</div>-->
+    <!--<!-- container end -->
+
+<!--</body>-->
+<!--</html>-->
