@@ -63,7 +63,6 @@
 }
 
 #progress {
-    color: #ffffff;
     background-color: lightgreen;
     min-height: 20px;
     display: block;
