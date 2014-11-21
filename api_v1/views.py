@@ -59,8 +59,7 @@ class ApplicationTasks(generics.ListAPIView):
 
     def get_queryset(self):
         return Task.objects.filter(
-            app_id=self.kwargs['app_id'],
-            user_id=get_user_id(self)
+            app_id=self.kwargs['app_id']
         )
 
 
@@ -79,8 +78,7 @@ class ApplicationTaskSelect(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         return Task.objects.filter(
             app_id=self.kwargs['app_id'],
-            task_id=self.kwargs['task_id'],
-            app_id__user_id=get_user_id(self)
+            task_id=self.kwargs['task_id']
         )
 
 
@@ -91,8 +89,7 @@ class ApplicationResults(generics.ListAPIView):
 
     def get_queryset(self):
         return Result.objects.filter(
-            task_id__app_id=self.kwargs['app_id'],
-            user_id=get_user_id(self)
+            task_id__app_id=self.kwargs['app_id']
         )
 
 
@@ -116,8 +113,7 @@ class ApplicationResultsTaskSelect(generics.ListAPIView):
     def get_queryset(self):
         return Result.objects.filter(
             task_id__app_id=self.kwargs['app_id'],
-            task_id=self.kwargs['task_id'],
-            user_id=get_user_id(self)
+            task_id=self.kwargs['task_id']
         )
 
 
@@ -136,6 +132,5 @@ class ApplicationResultSelect(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         return Result.objects.filter(
             task_id__app_id=self.kwargs['app_id'],
-            result_id=self.kwargs['result_id'],
-            user_id=get_user_id(self)
+            result_id=self.kwargs['result_id']
         )
