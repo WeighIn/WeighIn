@@ -1,0 +1,55 @@
+.navigation li {
+    display: inline-block;
+    padding-right: 18px;
+    padding-left: 18px;
+    font-size: 1.2em;
+}
+
+.navigation {
+    padding: 1%;
+    background-color: rgba(105,105,105,0.9);
+    border-bottom: 1px solid black;
+    margin: 0;
+    margin-top: -5px;
+
+}
+
+.navigation li a {
+    color: gray;
+}
+
+a {
+    color: rgb(105,105,105);
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.fa {
+    color: white;
+    font-size: 1.7em;
+}
+.game {
+    min-height: 500px;
+    background-color: gray;
+}
+
+.score {
+    min-height: 700px;
+    background-color: lightgray;
+}
+
+.experience {
+    min-height: 200px;
+    background-color: orange;
+}
+
+.col-xs-8 {
+    padding: 0;
+}
+
+.col-xs-4 {
+    padding: 0;
+}
+
