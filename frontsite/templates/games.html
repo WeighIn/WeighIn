@@ -22,21 +22,17 @@
     <link rel="stylesheet" type="text/css" href="{% static "frontsite/gamepage.css" %}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!-- Google Analytics -->
-   <script LANGUAGE="JavaScript">
-    // JavaScript statements go here
-    function processLogin()
-    {
-        var username = document.getElementById("user").value;
-        var password = document.getElementById("pass").value;
-
-        var xmlHttp = null;
-
-         xmlHttp = new XMLHttpRequest();
-         xmlHttp.open( "GET", "http://dev.weighin.me/api/1/login/?username=" + username "&password=" + password, false );
-         xmlHttp.send( null );
-         alert(xmlHttp.responseText);
-
-    }
+   <script>
+        $(document).ready(function(){
+      $("button").click(function(){
+        $.getJSON("demo_ajax_json.js",function(result){
+          $.each(result, function(i, field){
+            $("div").append(field + " ");
+            alert(field + " ");
+          });
+        });
+      });
+    });
 </script>
 </head>
 <body>
@@ -59,7 +55,7 @@
                             Password:<br>
                             <input type="text" name="password" id="pass">
                         </form>
-                        <input type = "button" id="login" value="login" onClick="processLogin();">
+                        <button>Login</button>
 
                     </div>
                     <div class="row experience">
