@@ -25,7 +25,20 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type='text/javascript' src="{% static "frontsite/index.js" %}"></script>
     <!-- <script src = "{% static "frontsite/events.js" %}"></script> -->
-    
+    <!-- Google Analytics -->
+        <script>
+        $(document).ready(function() {
+            $('body .stuff').css({'height':($(window).height()-120)+'px'});
+        });
+    </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-57180498-1', 'auto');
+            ga('send', 'pageview');
+        </script>
 </head>
 
 <body>
@@ -35,13 +48,13 @@
     <ul class="navbar">
         <li> <a href="/"> <i class="fa fa-home"></i></a></li>
         <li> <a href=""> <i class="fa fa-user active"></i></a></li>
-        <li> <a href="/main"> <i class="fa fa-send-o"></i></a></li>
+        <li> <a href="/games"> <i class="fa fa-send-o"></i></a></li>
     </ul>
 </div>
     <!-- nav tabs end -->
 
     <div class = "container-fluid animated fadeIn">
-
+    <div class = "stuff">
        <div class = "row content">
            <div class = "col-md-1"></div>
 
@@ -95,7 +108,7 @@
                     <!--end of col  -->
            </div>
            <!--end of row content-->
-
+        </div>
 </div>
 <!--end of container-->
 </body>
