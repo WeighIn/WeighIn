@@ -24,12 +24,13 @@
         <!-- Google Analytics -->
    <script>
         $(document).ready(function(){
-             $("button").click(function(){
+            $("button").click(function(){
             $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result){
-           $.each(result, function(i, field){
-             $('#experience').append(field + " " + json['points']);
+                alert(result['points']);
+            $.each(result, function(i, field){
+              $("div").append(field + " " + result['points']);
             
-             });
+            });
          });
       });
     });
