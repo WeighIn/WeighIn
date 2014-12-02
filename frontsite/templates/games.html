@@ -27,8 +27,7 @@
              $("button").click(function(){
             $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result){
            $.each(result, function(i, field){
-             $("div").append(field + " ");
-             alert(field + " ");
+             $('#experience').append(field + " " + json['points']);
             
              });
          });
