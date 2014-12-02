@@ -25,16 +25,10 @@
    <script>
         $(document).ready(function(){
              $("button").click(function(){
-            $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result)){
-                alert(result);
-                $.each(result, function(i,field) {
-                    if((i == 0 && field == "True") || json['@success'] == "True")
-                    {
-                        $('experience').html(json['@points']);
-                    }
-                    else{
-                        $('experience').html("Account not found");
-                    }
+            $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result){
+           $.each(result, function(i, field){
+             $("div").append(field + " ");
+             alert(field + " ");
             
              });
          });
