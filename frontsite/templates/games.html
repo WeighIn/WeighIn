@@ -29,6 +29,7 @@
         $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result)){
                 jsonp = result;
         });
+        alert(jsonp);
         var obj = $.parseJSON(jsonp);
         $.each(obj, function() {
             if(this['success'] == "True")
