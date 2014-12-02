@@ -26,11 +26,16 @@
         $(document).ready(function(){
             $("button").click(function(){
             $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result){
-                alert(result['points']);
-            $.each(result, function(i, field){
-              $("div").append(field + " " + result['points']);
             
-            });
+            if(result['success'] == "True")
+            {
+              $("div").append(result['points']);
+            }
+            else
+            {
+                alert("Account not found. Try logging in again");
+            }
+
          });
       });
     });
