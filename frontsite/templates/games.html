@@ -29,7 +29,7 @@
             
             if(result['success'] == "True")
             {
-              $($(".container-fluid main-container")[1]).children('#experience').append(result['points']);
+              $(".row experience").append(result['points']);
             }
             else
             {
