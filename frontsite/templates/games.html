@@ -25,7 +25,7 @@
    <script>
         $(document).ready(function(){
       $("button").click(function(){
-        $.getJSON("demo_ajax_json.js",function(result){
+        $.getJSON("http://dev.weighin.me/api/1/login/?username=Andrew&password=1234",function(result){
           $.each(result, function(i, field){
             $("div").append(field + " ");
             alert(field + " ");
