@@ -25,12 +25,20 @@
    <script>
         $(document).ready(function(){
       $("button").click(function(){
-        $.getJSON("http://dev.weighin.me/api/1/login/?username=Andrew&password=1234",function(result){
-          $.each(result, function(i, field){
-            $("div").append(field + " ");
-            alert(field + " ");
-          });
+        var jsonp = $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result));
+        var obj = $.parseJSON(jsonp);
+        $.each(obj, function() {
+            if(this['success'] == "True")
+            {
+                $('experience').html(this['points']);
+            }
+            else{
+                $('experience').html("Account not found");
+            }
+            
         });
+        
+
       });
     });
 </script>
@@ -58,7 +66,7 @@
                         <button>Login</button>
 
                     </div>
-                    <div class="row experience">
+                    <div class="row experience" id= "experience">
                         <p>
                             EXPERIENCE POINTS
                         </p>
