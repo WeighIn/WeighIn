@@ -8,9 +8,34 @@ from rest_framework.request import Request
 from rest_framework.views import APIView
 from rest_framework import mixins, generics, status
 from rest_framework.permissions import DjangoModelPermissions
+import json
+from django.http import HttpResponse
 
 from models import *
 from serializers import *
+
+
+def test(request):
+    response_data = {}
+    response_data['game_num'] = '0'
+    response_data['game_data'] = ['blah', 'blah1', 'blah3']
+    response_data['username'] = request.GET.get('q', '')
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+
+def login(request):
+    response_data = {}
+    username = request.GET.get('username', 'null')
+    password = request.GET.get('password', 'null')
+
+    if username == 'Andrew' and password == '1234':
+        response_data['points'] = 400
+        response_data['success'] = 'True'
+        response_data['username'] = 'Andrew'
+    else:
+        response_data['success'] = 'False'
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
+
 
 
 def get_user(view):
