@@ -29,7 +29,7 @@
             
             if(result['success'] == "True")
             {
-              $("div").after(result['points']);
+              $("<p>"+result['points']+"</p>").appendTo("#experience")
             }
             else
             {
