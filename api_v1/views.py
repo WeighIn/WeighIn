@@ -10,6 +10,7 @@ from rest_framework import mixins, generics, status
 from rest_framework.permissions import DjangoModelPermissions
 import json
 from django.http import HttpResponse
+from django.contrib.auth import authenticate, login
 
 from models import *
 from serializers import *
@@ -22,19 +23,47 @@ def test(request):
     response_data['username'] = request.GET.get('q', '')
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
+def fake_login(username,password):
+    if username == 'Andrew' and password == '1234':
+        return True
+    else:
+        return False
 
-def login(request):
+
+def login_user(request):
     response_data = {}
     username = request.GET.get('username', 'null')
     password = request.GET.get('password', 'null')
-
-    if username == 'Andrew' and password == '1234':
-        response_data['points'] = 400
-        response_data['success'] = 'True'
-        response_data['username'] = 'Andrew'
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            response_data['points'] = 400
+            response_data['success'] = 'True'
+            response_data['username'] = 'Andrew'
+        else:
+            response_data['success'] = 'False'
     else:
         response_data['success'] = 'False'
     return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+
+def viewaccount(view):
+    user = view.request.user
+    return user
+
+# def login(request):
+#     response_data = {}
+#     username = request.GET.get('username', 'null')
+#     password = request.GET.get('password', 'null')
+#
+#     if fake_login(username, password):
+#         response_data['points'] = 400
+#         response_data['success'] = 'True'
+#         response_data['username'] = 'Andrew'
+#     else:
+#         response_data['success'] = 'False'
+#     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 
 
