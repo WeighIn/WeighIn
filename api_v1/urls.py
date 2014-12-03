@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^test/', views.test),
     url(r'^login/', views.login_user),
     url(r'^hard_begin/', views.hard_begin),
+    url(r'^hard_submit/', views.hard_submit),
     url(r'^user/?$', views.UserAccount.as_view()),
 
     url(r'^app/(?P<app_id>[0-9]+)', include([

@@ -30,6 +30,20 @@ def fake_login(username,password):
     else:
         return False
 
+def hard_submit(request):
+    response_data = {}
+    response_data['response_type'] = 'submit'
+    response_data['delta_points'] = 5
+    response_data['points'] = 405
+    response_data['game_num'] = 0
+    response_data['items'] = 6
+    response_data['item_0'] = {'score': 10}
+    response_data['item_1'] = {'score': 2}
+    response_data['item_2'] = {'score': 3}
+    response_data['item_3'] = {'score': 4}
+    response_data['item_4'] = {'score': 5}
+    response_data['item_5'] = {'score': 8}
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 
 def login_user(request):
@@ -54,6 +68,7 @@ def login_user(request):
 
 def hard_begin(request):
     response_data = {}
+    response_data['response_type'] = 'begin'
     response_data['game_num'] = 0
     response_data['items'] = 6
     response_data['item_0'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task0.png'}
