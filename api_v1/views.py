@@ -14,6 +14,7 @@ from django.contrib.auth import authenticate, login
 
 from models import *
 from serializers import *
+from models import Profile
 
 
 def test(request):
@@ -30,6 +31,7 @@ def fake_login(username,password):
         return False
 
 
+
 def login_user(request):
     response_data = {}
     username = request.GET.get('username', 'null')
@@ -40,11 +42,26 @@ def login_user(request):
             login(request, user)
             response_data['points'] = 400
             response_data['success'] = 'True'
-            response_data['username'] = 'Andrew'
+            response_data['username'] = username
+            # p = Profile(user_id =user, points = 0, name = 'Andrew')
+            # p.save()
         else:
             response_data['success'] = 'False'
     else:
         response_data['success'] = 'False'
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+
+def hard_begin(request):
+    response_data = {}
+    response_data['game_num'] = 0
+    response_data['items'] = 6
+    response_data['item_0'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task0.png'}
+    response_data['item_1'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task1.png'}
+    response_data['item_2'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task2.png'}
+    response_data['item_3'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task3.png'}
+    response_data['item_4'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task4.png'}
+    response_data['item_5'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task5.png'}
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 
