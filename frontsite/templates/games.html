@@ -24,17 +24,20 @@
         <!-- Google Analytics -->
    <script>
         $(document).ready(function(){
+            $('.thegame').hide()
             $("button").click(function(){
-            $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result){
-            
+            $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result)
+            {
             if(result['success'] == "True")
-            {
-              $("<p>"+result['points']+"</p>").appendTo("#experience")
-            }
+                {
+                  $("<p>"+result['points']+"</p>").appendTo("#experience");
+                    $(".login").hide()
+                    $(".thegame").show()
+                }
             else
-            {
-                alert("Account not found. Try logging in again");
-            }
+                {
+                    alert("Account not found. Try logging in again");
+                }
 
          });
       });
@@ -54,7 +57,9 @@
                         <p>
                             GAME HERE
                         </p>
-                        <form>
+                        <iframe class="thegame" 
+                        src="../../games/weighinWidget/weighin.html" width="500" height="500" frameborder="0"></iframe>
+                        <form class="login">
                             Username:<br>
                             <input type="text" name="username" id="user">
                             <br>
