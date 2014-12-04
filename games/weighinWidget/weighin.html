@@ -34,7 +34,14 @@
 
 <script>
 var currentImage = 0;
-var totalImages = 6;
+var linkArray = [
+	"https://s3.amazonaws.com/weighin/game0/task1.png",
+	"https://s3.amazonaws.com/weighin/game0/task2.png",
+	"https://s3.amazonaws.com/weighin/game0/task3.png",
+	"https://s3.amazonaws.com/weighin/game0/task4.png",
+	"https://s3.amazonaws.com/weighin/game0/task5.png"
+  ];
+var totalImages = linkArray.length - 1;
 var guessArray = [""];
 var nxtBtn = document.getElementById("nextBtn");
 var progressBar = document.getElementById("progressBar");
@@ -154,7 +161,8 @@ $(document).ready(function(){
 	function paint() {
 	    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 		var image = new Image();
-		image.src = "bull" + currentImage + ".png";
+		//image.src = "bull" + currentImage + ".png";
+		image.src = linkArray[currentImage];
 		ctx.drawImage(image, 0, 0, 500, 500);
 		makeRect(30, "1");
 		makeRect(100, "2");
