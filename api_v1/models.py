@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user_id = models.OneToOneField(User, related_name="Profile")
     points = models.BigIntegerField(default=0)
-    name = models.CharField(max_length=100)
 
 class Application(models.Model):
     app_id = models.BigIntegerField(primary_key=True)
