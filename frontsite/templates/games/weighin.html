@@ -1,0 +1,187 @@
+<head>
+<meta charset="UTF-8">
+<!-- <link rel ="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static "games/weighinWidget/weighinStyle.css" %}"/>
+</head> 
+<!-- Jquery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<body>
+	<div id="intro">
+		<canvas id="introCanvas" width="500" height="500"></canvas>
+		<button onClick="goToGame()" id="playBtn" class="myButton intro">Play</button>
+		<h1 id="introTitle">WeighIn</h1>
+		<h3 id="introExpl">*Guess the object's weight!</h3>
+	</div>
+	<div id="game">
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<div id="stats">
+			<p id="timer">1:00</p>
+			<div id="progressBar"></div>
+			<p id="progressStatus">0/6</p>
+		</div>
+		<input type="number" id="textInput1" max="9" min="0" placeholder="0">
+		<input type="number" id="textInput2" max="9" min="0" placeholder="0">
+		<input type="number" id="textInput3" max="9" min="0" placeholder="0">
+		<input type="number" id="textInput4" max="9" min="0" placeholder="0">
+		<input type="number" id="textInput5" max="9" min="0" placeholder="0">
+		<h3 class="units">kg</h3>
+		<button type="submit" class="myButton next" id="nextBtn" onclick="nextButtonClicked()">Next</button>
+
+	</div>
+</body>
+
+<script>
+var currentImage = 0;
+var totalImages = 6;
+var guessArray = [""];
+var nxtBtn = document.getElementById("nextBtn");
+var progressBar = document.getElementById("progressBar");
+progressBar.style.width=""+0+"px";
+var progressStatus = document.getElementById("progressStatus");
+progressStatus.innerHTML = currentImage + "/" + totalImages;
+var txt1 = document.getElementById("textInput1");
+var txt2 = document.getElementById("textInput2");
+var txt3 = document.getElementById("textInput3");
+var txt4 = document.getElementById("textInput4");
+var txt5 = document.getElementById("textInput5");
+nxtBtn.onclick= function() {
+	if (currentImage < totalImages) {
+		guessArray[currentImage] = txt1.value+txt2.value+txt3.value+txt4.value+txt5.value;
+		currentImage = currentImage+1;
+		progressBar.style.width=""+(currentImage*420/totalImages)+"px";
+		progressStatus.innerHTML = currentImage + "/" + totalImages;
+		txt1.value = "0";
+		txt2.value = "0";
+		txt3.value = "0";
+		txt4.value = "0";
+		txt5.value = "0";
+	}
+
+};
+
+var ctx;
+var time = 60;
+var array = [];
+var colorArray = [];
+var pictureArray = [];
+var majorArray = [];
+var picturemajorArray = [];
+var choiceArray = [];
+canvas.addEventListener("mousedown", getPosition, false);
+function getPosition(event)
+  {
+    
+    var x = new Number();
+    var y = new Number();
+    var canvas = document.getElementById("canvas");
+
+    if (event.x != undefined && event.y != undefined)
+    {
+      x = event.x;
+      y = event.y;
+    }
+    else // Firefox method to get the position
+    {
+      x = event.clientX + document.body.scrollLeft +
+          document.documentElement.scrollLeft;
+      y = event.clientY + document.body.scrollTop +
+          document.documentElement.scrollTop;
+    }
+
+    x -= canvas.offsetLeft;
+    y -= canvas.offsetTop;
+	console.log(ctx);
+	console.log(x + ": " + y)
+	array.push([x,y]);
+    // alert("x: " + x + "  y: " + y);
+  
+  }
+
+$(document).ready(function(){
+	//Canvas stuff
+	var canvas = $("#canvas")[0];
+	ctx = canvas.getContext("2d");
+	var w = $("#canvas").width();
+	var h = $("#canvas").height();
+	
+	
+	function init()
+	{
+		//every 90ms
+		if(typeof game_loop != "undefined") clearInterval(game_loop);
+		game_loop = setInterval(paint, 90);
+		time_loop = setInterval(decrementTime, 1000);
+
+	}
+	init();
+	
+	function decrementTime() {
+		if (time > 0) {
+			var timer = document.getElementById('timer');
+			time = time - 1;
+			if (time > 9) {
+				timer.innerHTML = "0:"+time;
+			} else {
+				timer.innerHTML = "0:0"+time;
+			}
+		}
+	}
+
+	function nextButtonClicked() {
+		ctx.fillStyle = "rgb(0,0,0)";
+		ctx.fillRect(0,0,500,500);
+	}
+
+	function makeRect(x, text) {
+		r = 242;
+		g = 82;
+		b = 82;
+		y = 400;
+		ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+		ctx.fillRect(x,y,60,60);
+//		ctx.fillStyle = "rgb(255,255,255)";
+//		ctx.font="40px Verdana";
+	//	ctx.fillText(text, x+18, y+42);
+	}
+
+	function makeUnitRect() {
+		ctx.fillStyle = "rgb(" + 242 + "," + 82 + "," + 82 + ")";
+		ctx.fillRect(380,410,40,40);
+	}
+
+	function paint() {
+	    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		var image = new Image();
+		image.src = "{% static "games/weighinWidget/" %}bull" + currentImage + ".png";
+		ctx.drawImage(image, 0, 0, 500, 500);
+		makeRect(30, "1");
+		makeRect(100, "2");
+		makeRect(170, "9");
+		makeRect(240, "5");
+		makeRect(310, "7");
+		makeUnitRect();
+	}
+	
+})
+</script>
+
+<script type="text/javascript">
+
+    var gameCanvas = document.getElementById('game');
+    gameCanvas.setAttribute('class','hidden');
+    var introCanvas = document.getElementById('intro');
+    introCanvas.setAttribute('class','visible');
+    /*
+    document.addEventListener('keydown',function(e) {
+    	if (e.keyCode == 37) {
+    		canvas.setAttribute('class','hidden');
+   		}
+    }, false);
+*/
+	function goToGame() {
+		gameCanvas.setAttribute('class','visible');
+		introCanvas.setAttribute('class', 'hidden');
+	}
+</script>
