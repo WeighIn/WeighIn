@@ -27,6 +27,7 @@ class Task(models.Model):
     worth = models.FloatField()
     accuracy = models.IntegerField()
     data = models.TextField()
+    complete = models.BooleanField()
 
     class Meta:
         permissions = (
