@@ -32,6 +32,7 @@
                 {
                   $("<p>"+result['points']+"</p>").appendTo("#experience");
                     $(".login").hide()
+                    $(".loginButton").hide()
                     $(".thegame").show()
                 }
             else
@@ -66,7 +67,7 @@
                             Password:<br>
                             <input type="text" name="password" id="pass">
                         </form>
-                        <button>Login</button>
+                        <button class="loginButton">Login</button>
 
                     </div>
                     <div class="row experience" id= "experience">
