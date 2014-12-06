@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput; gunicorn WeighIn.wsgi
+web: python manage.py collectstatic --noinput; gunicorn WeighIn.wsgi --log-file -
