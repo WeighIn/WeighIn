@@ -12,7 +12,7 @@ class Profile(models.Model):
 
 class Application(models.Model):
     app_id = models.BigIntegerField(primary_key=True)
-    user_id = models.ForeignKey(User, related_name="Application")  # Owner
+    user_id = models.OnetoOneField(User, related_name="Application")  # Owner
     weight = models.IntegerField(default=1)
     points = models.BigIntegerField(default=1)
 
