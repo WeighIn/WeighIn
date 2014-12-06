@@ -22,6 +22,7 @@ cache:
 
 # Install Dependencies
 install:
+  - "df"
   - "pip install -r requirements.txt --download-cache $HOME/.pip-cache"
 
 # Run Tests
@@ -38,6 +39,7 @@ script:
     fi
     export BUILD_ENV
   - python manage.py test
+  - df
 
 # Deploy to Heroku
 deploy:
