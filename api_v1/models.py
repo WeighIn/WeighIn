@@ -14,7 +14,7 @@ class Application(models.Model):
     app_id = models.BigIntegerField(primary_key=True)
     user_id = models.ForeignKey(User, related_name="Application")  # Owner
     weight = models.IntegerField(default=1)
-    points = models.BigIntegerField(default=0)
+    points = models.BigIntegerField(default=1)
 
     def __unicode__(self):
         return str(self.app_id)
