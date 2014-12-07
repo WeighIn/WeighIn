@@ -74,7 +74,7 @@ def hard_game_num_request(request):
 
 def hard_game_begin(request):
     response_data = {}
-    if request.GET.get('game_num', 'null') == 0:
+    if request.GET.get('game_num', 'null') == str(0):
         response_data['item_0'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task0.png'}
         response_data['item_1'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task1.png'}
         response_data['item_2'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task2.png'}
