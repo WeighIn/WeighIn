@@ -44,6 +44,21 @@
       });
     });
     </script>
+
+    <script>
+        $(document).ready(function(){
+            $('.thegame').hide()
+            $("button").click(function(){
+            $.getJSON("http://dev.weighin.me/api/1/hard_begin/",function(result)
+            {
+            $.each(result, function(i, field){
+                 alert(field + " ");
+             });
+
+         });
+      });
+    });
+    </script>
 </head>
 <body>
     <ul class="navigation">
