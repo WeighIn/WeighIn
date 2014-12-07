@@ -66,17 +66,21 @@ def login_user(request):
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 
-def hard_begin(request):
+def hard_game_num_request(request):
     response_data = {}
-    response_data['response_type'] = 'begin'
     response_data['game_num'] = 0
-    response_data['items'] = 6
-    response_data['item_0'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task0.png'}
-    response_data['item_1'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task1.png'}
-    response_data['item_2'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task2.png'}
-    response_data['item_3'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task3.png'}
-    response_data['item_4'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task4.png'}
-    response_data['item_5'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task5.png'}
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+
+def hard_game_begin(request):
+    response_data = {}
+    if request.GET.get('game_num', 'null') == 0:
+        response_data['item_0'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task0.png'}
+        response_data['item_1'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task1.png'}
+        response_data['item_2'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task2.png'}
+        response_data['item_3'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task3.png'}
+        response_data['item_4'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task4.png'}
+        response_data['item_5'] = {'source': 'https://s3.amazonaws.com/weighin/game0/task5.png'}
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 
