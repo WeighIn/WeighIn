@@ -39,7 +39,7 @@
         $(document).ready(function(){
             $.getJSON("http://dev.weighin.me/api/1/hard_game_begin/?game_num=0",function(result)
             {
-
+            
             $.each(result.item_0, function(i, field){
                  var fieldOne = field;
                  alert(fieldOne);
