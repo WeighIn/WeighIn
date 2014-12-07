@@ -51,9 +51,6 @@
             $("button").click(function(){
             $.getJSON("http://dev.weighin.me/api/1/hard_begin/",function(result)
             {
-            $.each(result, function(i, field){
-                 alert(field + " ");
-             });
 
             $.each(result.item_0, function(i, field){
                  alert(field + " ");
