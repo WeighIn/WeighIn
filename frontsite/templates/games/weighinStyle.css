@@ -1,0 +1,222 @@
+#game {
+  height: 500px;
+  position: absolute;
+  width: 500px;
+  left: 0%;
+  top: 0%;
+}
+
+#intro {
+  height: 500px;
+  position: absolute;
+  width: 500px;
+  left: 0%;
+  top: 0%;
+  color: #ffffff;
+}
+
+#canvas {
+  height: 100%;
+  width: 100%;
+
+}
+
+#mainImg {
+  position: absolute;
+  bottom: 0px;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
+}
+
+#introCanvas {
+  height: 100%;
+  width: 100%;
+  background-color: #f25252;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #f2c12e;
+}
+
+#stats {
+  background-color: #f25252;
+  width: 500px;
+  height: 40px;
+  position: absolute;
+  bottom: 460px;
+}
+
+#progressStatus {
+  left: 250px;
+  text-align: center;
+  position: absolute;
+  font-size: 30px;
+  width: 50px;
+  height: 40px;
+  color: #ffffff;
+}
+
+#timer {
+  font-size: 30px;
+  position: absolute;
+  text-align: center;
+  left: 0px;
+  color: #ffffff;
+  width: 80px;
+  height:40px;
+  background-color: #f29d35;
+}
+
+#progressBar {
+  left: 0px;
+  position: absolute;
+  width: 420px;
+  height: 40px;
+  background-color: #f2c12e;
+}
+
+#textInput1 {
+  font-size:40;
+  color: #ffffff;
+  bottom: 40px;
+  left: 30px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+#textInput2 {
+  font-size:40;
+  color: #ffffff;
+  bottom: 40px;
+  left: 100px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+#textInput3 {
+  font-size:40;
+  color: #ffffff;
+  bottom: 40px;
+  left: 170px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+#textInput4 {
+  font-size:40;
+  color: #ffffff;
+  bottom: 40px;
+  left: 240px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+#textInput5 {
+  font-size:40;
+  color: #ffffff;
+  bottom: 40px;
+  left: 310px;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+#nextBtn {
+  bottom: 10;
+  left: 445;
+  position: absolute;
+  width: 50px;
+  height: 35px;
+}
+
+#introTitle {
+  font-size: 70px;
+  text-align: center;
+  position: absolute;
+  bottom: 330px;
+  left: 120px;
+  width: 150px;
+  height: 50px;
+}
+
+#introExpl {
+  font-size: 35px;
+  text-align: center;
+  position: absolute;
+  bottom: 240px;
+  left: 50px;
+  width: 400px;
+  height: 50px;
+}
+
+#playBtn {
+  position: absolute;
+  bottom: 140px;
+  left: 175px;
+  width: 150px;
+  height: 50px;
+}
+
+input {
+  background-color: rgba(0,0,0,0.0);
+  text-align: center;
+  color: black;
+  border: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #ffffff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #ffffff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #ffffff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #ffffff;
+}
+
+.units {
+  position: absolute;
+  bottom: 50px;
+  left: 387px;
+}
+
+#nextBtn {
+    font: bold 18px Arial,sans-serif;
+}
+
+#playBtn {
+  font: bold 30px Arial,sans-serif;
+}
+
+.myButton {
+  color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  padding: 0.0em 0em 0.0em;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-radius: 0.3em;
+  border: 1px solid;
+  /*border-color: #bbbbbb #a2a2a2 #888888;*/
+  background-color: #14a697;
+}
+.myButton:hover {
+  
+}
+.myButton:active {
+  padding: 0.0em 0em 0.0em;
+  margin-top: 0.0em;
+  /*border-color: #a2a2a2 #bbbbbb #eee;*/
+  background-color: #049687;
+
+}
