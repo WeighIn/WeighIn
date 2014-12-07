@@ -75,7 +75,6 @@
 
 
 var currentImage = 0;
-alert(field1 + "," + field2 + "," + field3 + "," + field4 + "," + field5 + "," + field6);
 var linkArray = ["" + field1,"" +field2,"" + field3,"" + field4, "" + field5, "" + field6];
 /*var linkArray = [
 	"https://s3.amazonaws.com/weighin/game0/task1.png",
@@ -98,7 +97,6 @@ var txt2 = document.getElementById("textInput2");
 var txt3 = document.getElementById("textInput3");
 var txt4 = document.getElementById("textInput4");
 var txt5 = document.getElementById("textInput5");
-alert(linkArray);
 nxtBtn.onclick = function() {
 	if (currentImage < totalImages) {
 		guessArray[currentImage] = txt1.value+txt2.value+txt3.value+txt4.value+txt5.value;
