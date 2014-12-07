@@ -31,9 +31,9 @@
             if(result['success'] == "True")
                 {
                   $("<p>"+result['points']+"</p>").appendTo("#experience");
-                    $(".login").hide()
-                    $(".loginButton").hide()
-                    $(".thegame").show()
+                  $(".login").hide()
+                  $(".loginButton").hide()
+                  $("#includedContent").load("/static/games/weighinWidget/weighin.html");
                 }
             else
                 {
@@ -58,8 +58,8 @@
                         <p>
                             GAME HERE
                         </p>
-                        <iframe class="thegame" 
-                        src="/static/games/weighinWidget/weighin.html" width="500" height="500" frameborder="0"></iframe>
+                        <iframe class="thegame" id="includedContent"
+                         width="500" height="500" frameborder="0"></iframe>
                         <form class="login">
                             Username:<br>
                             <input type="text" name="username" id="user">
