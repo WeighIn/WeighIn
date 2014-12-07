@@ -52,6 +52,7 @@
             $.getJSON("http://dev.weighin.me/api/1/hard_begin/",function(result)
             {
 
+            alert("game num: " + result['game_num'])
             $.each(result.item_0, function(i, field){
                  alert(field + " ");
              });
