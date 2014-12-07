@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <!-- <link rel ="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="dev.weighin.me/static/games/weighinWidget/weighinStyle.css" %}"/>
+<link rel="stylesheet" type="text/css" href="weighinStyle.css"/>
 </head> 
 <!-- Jquery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -45,34 +45,29 @@
                  var fieldOne = field;
                  alert(fieldOne);
              });
-
             $.each(result.item_1, function(i, field){
                  var fieldTwo = field;
                  alert(fieldTwo);
              });
-
             $.each(result.item_2, function(i, field){
                  var fieldThree = field;
                  alert(fieldThree);
              });
-
             $.each(result.item_3, function(i, field){
                  var fieldFour = field;
                  alert(fieldFour);
              });
-
             $.each(result.item_4, function(i, field){
                  var fieldFive = field;
                  alert(fieldFive);
              });
-
             $.each(result.item_5, function(i, field){
                  var fieldSix = field;
                  alert(fieldSix);
              });
          });
       });
-
+    });
    
 var currentImage = 0;
 var linkArray = [
@@ -112,9 +107,7 @@ nxtBtn.onclick = function() {
 		txt5.value = "0";
 		mainImg.src = linkArray[currentImage];
 	}
-
 };
-
 var ctx;
 //var time = 60;
 var array = [];
@@ -130,7 +123,6 @@ function getPosition(event)
     var x = new Number();
     var y = new Number();
     var canvas = document.getElementById("canvas");
-
     if (event.x != undefined && event.y != undefined)
     {
       x = event.x;
@@ -143,7 +135,6 @@ function getPosition(event)
       y = event.clientY + document.body.scrollTop +
           document.documentElement.scrollTop;
     }
-
     x -= canvas.offsetLeft;
     y -= canvas.offsetTop;
 	console.log(ctx);
@@ -152,7 +143,6 @@ function getPosition(event)
     // alert("x: " + x + "  y: " + y);
   
   }
-
 $(document).ready(function(){
 	//Canvas stuff
 	var canvas = $("#canvas")[0];
@@ -188,27 +178,21 @@ $(document).ready(function(){
 		if (txt5.value.length > 1) {
 			txt5.value = txt5.value.charAt(1);
 		}
-
 		if (txt1.value != "0" && txt1.value != "1" && txt1.value != "2" && txt1.value != "3" && txt1.value != "4" && txt1.value != "5" && txt1.value != "6" && txt1.value != "7" && txt1.value != "8" && txt1.value != "9") {
 			txt1.value = "0";
 		}
-
 		if (txt2.value != "0" && txt2.value != "1" && txt2.value != "2" && txt2.value != "3" && txt2.value != "4" && txt2.value != "5" && txt2.value != "6" && txt2.value != "7" && txt2.value != "8" && txt2.value != "9") {
 			txt2.value = "0";
 		}
-
 		if (txt3.value != "0" && txt3.value != "1" && txt3.value != "2" && txt3.value != "3" && txt3.value != "4" && txt3.value != "5" && txt3.value != "6" && txt3.value != "7" && txt3.value != "8" && txt3.value != "9") {
 			txt3.value = "0";
 		}
-
 		if (txt4.value != "0" && txt4.value != "1" && txt4.value != "2" && txt4.value != "3" && txt4.value != "4" && txt4.value != "5" && txt4.value != "6" && txt4.value != "7" && txt4.value != "8" && txt4.value != "9") {
 			txt4.value = "0";
 		}
-
 		if (txt5.value != "0" && txt5.value != "1" && txt5.value != "2" && txt5.value != "3" && txt5.value != "4" && txt5.value != "5" && txt5.value != "6" && txt5.value != "7" && txt5.value != "8" && txt5.value != "9") {
 			txt5.value = "0";
 		}
-
 	}
 /*
 	function decrementTime() {
@@ -227,7 +211,6 @@ $(document).ready(function(){
 		ctx.fillStyle = "rgb(0,0,0)";
 		ctx.fillRect(0,0,500,500);
 	}
-
 	function makeRect(x) {
 		r = 242;
 		g = 82;
@@ -236,12 +219,10 @@ $(document).ready(function(){
 		ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
 		ctx.fillRect(x,y,60,60);
 	}
-
 	function makeUnitRect() {
 		ctx.fillStyle = "rgb(" + 242 + "," + 82 + "," + 82 + ")";
 		ctx.fillRect(380,410,40,40);
 	}
-
 	function paint() {
 	    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 		makeRect(30);
@@ -256,7 +237,6 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
-
     var gameCanvas = document.getElementById('game');
     gameCanvas.setAttribute('class','hidden');
     var introCanvas = document.getElementById('intro');
