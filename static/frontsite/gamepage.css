@@ -1,21 +1,46 @@
-.navigation li {
+
+.navbar li {
     display: inline-block;
-    padding-right: 18px;
-    padding-left: 18px;
+    padding-right: 25px;
     font-size: 1.2em;
+    position: relative;
+    left:80%;
+    top:-40px;
+    vertical-align:middle;
 }
+.logo {
+    width:2.7em;
+    height:2.7em;
+    top:-5px;
+    display:inline-block;
+    position:relative;
 
-.navigation {
-    padding: 1%;
-    background-color: rgba(105,105,105,0.9);
+}
+.navigation{
+    padding: 15px;
+    background-color: rgba(105,105,105,1);
     border-bottom: 1px solid black;
-    margin: 0;
-    margin-top: -5px;
-
+    margin-top: -5px; 
+    position:fixed;
+    height:8%;
+    z-index:20;
+    width:100%;
+}
+.hover {
+    color:rgb(75,75,75);
+}
+.navbar li a {
+    color: gray;
 }
 
-.navigation li a {
-    color: gray;
+.fa {
+    color: white;
+    opacity:1.0;
+    font-size: 1.7em;
+}
+.active {
+    color: black;
+    font-size: 1.75em;
 }
 
 a {
@@ -26,10 +51,6 @@ a:hover {
     color: black;
 }
 
-.fa {
-    color: white;
-    font-size: 1.7em;
-}
 .game {
     min-height: 500px;
     background-color: gray;
