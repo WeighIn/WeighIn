@@ -10,7 +10,7 @@
     <meta type="description" content="Gamifying crowdsourcing"/>
     <meta name="viewport" content="initial-scale=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-    <meta http-eqiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-eqiv="content-type" content="text/html" charset="utf-8"/>
     
     <!-- Links -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300"/>
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{% static "frontsite/animate.css" %}">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type='text/javascript' src="{% static "frontsite/index.js" %}"></script>
+    <script type='text/javascript' src="login.js"></script>
     <!-- <script src = "{% static "frontsite/events.js" %}"></script> -->
     <!-- Google Analytics -->
         <script>
@@ -90,14 +90,14 @@
                             <legend> Already a member?  Sign in </legend>
                             <br/>
                             <fieldset class="pure-group">
-                                <input type="text" class="pure-input-1-2" placeholder="Username or Email">
-                                <input type="text" class="pure-input-1-2" placeholder="Password">
+                                <input type="text" id="username"class="pure-input-1-2" placeholder="Username or Email">
+                                <input type="text" id="pwd" class="pure-input-1-2" placeholder="Password">
                             </fieldset>
                             <br>
                             <br>
 
                             <br>
-                            <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Sign in</button>
+                            <button type="submit" id="login_button" class="pure-button pure-input-1-2 pure-button-primary">Sign in</button>
                         </form>
                     </div>
 
