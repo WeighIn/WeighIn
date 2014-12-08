@@ -21,7 +21,6 @@
     <script src="gamepage.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static "frontsite/gamepage.css" %}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type='text/javascript' src="{% static "frontsite/index.js" %}"></script>
         <!-- Google Analytics -->
    <script>
         $(document).ready(function(){
@@ -32,29 +31,24 @@
             if(result['success'] == "True")
                 {
                   $("<p>"+result['points']+"</p>").appendTo("#experience");
-                  $(".login").hide()
-                  $(".loginButton").hide()
-                  $("#includedContent").load("/static/games/weighinWidget/weighin.html");
+                    $(".login").hide()
+                    $(".loginButton").hide()
+                    $(".thegame").show()
                 }
             else
                 {
                     alert("Account not found. Try logging in again");
                 }
-
          });
       });
     });
     </script>
 </head>
 <body>
-<div class ="navigation">
-    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
-    <ul class="navbar">
-        <li> <a  href="/"> <i class="fa fa-home"></i></a></li>
-        <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
-        <li> <a href=""> <i class="fa fa-send-o active"></i></a></li>
+    <ul class="navigation">
+        <li> <a  href=""> <i class="fa fa-home active"></i></a></li>
+        <li> <a href=""> <i class="fa fa-user"></i></a></li>
     </ul>
-</div>
     <div class="container-fluid main-container">
         <div class="row main-row">
             <div class="col-xs-8 ">
@@ -63,9 +57,8 @@
                         <p>
                             GAME HERE
                         </p>
-                        <iFrame class="thegame" id="includedContent" src="/static/games/weighinWidget/weighin.html" height = "500"
-                        width = "500">
-                        </iFrame>
+                        <iframe class="thegame" 
+                        src="/static/games/weighinWidget/weighin.html" width="500" height="500" frameborder="0"></iframe>
                         <form class="login">
                             Username:<br>
                             <input type="text" name="username" id="user">
