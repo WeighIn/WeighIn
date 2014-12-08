@@ -29,12 +29,13 @@
     <!-- Google Analytics -->
         <script>
         $(document).ready(function(){
+            $('body .stuff').css({'height':($(window).height()-120)+'px'});
             $("button").click(function(){
             $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#username').val() + "&password=" + $('#pwd').val(),function(result)
             {
             if(result['success'] == "True")
                 {
-                  alert("success");
+                  window.location.replace("http://dev.weighin.me/games");
                 }
             else
                 {
