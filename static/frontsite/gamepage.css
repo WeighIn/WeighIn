@@ -1,4 +1,6 @@
-
+.main-row {
+    margin-top: 4%;
+}
 .navbar li {
     display: inline-block;
     padding-right: 25px;

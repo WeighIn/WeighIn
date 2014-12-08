@@ -26,7 +26,6 @@
    <script>
         $(document).ready(function(){
             $('.thegame').hide()
-            $('body .mainrow').css({'height':($(window).height()-120)+'px'});
             $("button").click(function(){
             $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result)
             {
