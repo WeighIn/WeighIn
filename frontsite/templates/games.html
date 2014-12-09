@@ -34,17 +34,6 @@
                     $("<p>"+result['points']+"</p>").appendTo("#experience");
                     $(".login").hide()
                     $(".loginButton").hide()
-                    $.getJSON("http://dev.weighin.me/api/1/hard_game_begin/?game_num=0",function(result)
-                    {
-
-                        console.log(result);
-                        console.log("Let's try this:" + result["item_0"]["source"]);    
-                        for( var item in result ){
-                            linkArray.push(result[item]["source"]);
-                        }
-                        alert("Done loading all images");
-                        alert(linkArray);
-                     });
                     $(".thegame").show()
                 }
             else

@@ -30,7 +30,7 @@
         <script>
         $(document).ready(function(){
             $('body .stuff').css({'height':($(window).height()-120)+'px'});
-            $("#login_button").click(function(){
+            $('#login_button').click(function(){
             $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#username').val() + "&password=" + $('#pwd').val(),function(result)
             {
             if(result['success'] == "True")
