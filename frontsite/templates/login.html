@@ -23,29 +23,29 @@
     <link rel="stylesheet" href="{% static "frontsite/animate.css" %}">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <script type='text/javascript' src="{% static "frontsite/index.js" %}">
-    <!-- <script src = "{% static "frontsite/events.js" %}"></script> -->
-    <!-- Google Analytics -->
-        <script>
+    <script>
         $(document).ready(function(){
-            $('body .stuff').css({'height':($(window).height()-120)+'px'});
-            $('#login_button').click(function(){
-            $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#username').val() + "&password=" + $('#pwd').val(),function(result)
+        $('#login_button').click(function(){
+            
+        $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#username').val() + "&password=" + $('#pwd').val(),function(result)
+        {
+        if(result['success'] == "True")
             {
-            if(result['success'] == "True")
-                {
-                  window.location.replace("http://dev.weighin.me/games");
-                }
-            else
-                {
-                    alert("Account not found. Try logging in again");
-                }
-
+                window.location.replace("http://dev.weighin.me/games");
+            }
+        else
+            {
+                alert("Account not found. Try logging in again");
+            }
          });
       });
     });
     </script>
+
+    <script type='text/javascript' src="{% static "frontsite/index.js" %}">
+    <!-- <script src = "{% static "frontsite/events.js" %}"></script> -->
+    <!-- Google Analytics -->
+        
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
