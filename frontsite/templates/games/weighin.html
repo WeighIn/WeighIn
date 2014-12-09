@@ -1,10 +1,9 @@
-{% load staticfiles %}
 <head>
 <meta charset="UTF-8">
 <!-- <link rel ="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="weighinStyle.css"/>
-</head> 
+<link rel="stylesheet" type="text/css" href="http://dev.weighin.me/static/games/weighinWidget/weighinStyle.css"/>
+</head>
 <!-- Jquery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
@@ -35,51 +34,11 @@
 </body>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="variables.js" type="text/javascript"></script>
         <!-- Google Analytics -->
    <script type="text/javascript">
-        $(document).ready(function(){
-            $.getJSON("http://dev.weighin.me/api/1/hard_game_begin/?game_num=0",function(result)
-            {
-            
-                $.each(result.item_0, function(i, field){
-                 var fieldOne = field;
-                 alert(fieldOne);
-             });
-            $.each(result.item_1, function(i, field){
-                 var fieldTwo = field;
-                 alert(fieldTwo);
-             });
-            $.each(result.item_2, function(i, field){
-                 var fieldThree = field;
-                 alert(fieldThree);
-             });
-            $.each(result.item_3, function(i, field){
-                 var fieldFour = field;
-                 alert(fieldFour);
-             });
-            $.each(result.item_4, function(i, field){
-                 var fieldFive = field;
-                 alert(fieldFive);
-             });
-            $.each(result.item_5, function(i, field){
-                 var fieldSix = field;
-                 alert(fieldSix);
-                 
-             });
-         });
-	});
-   
+   	
 var currentImage = 0;
-/*var linkArray = [
-	fieldOne,fieldTwo,fieldThree,fieldFour,fieldFive,fieldSix
-  ];*/
-var linkArray = [
-	"https://s3.amazonaws.com/weighin/game0/task1.png",
-	"https://s3.amazonaws.com/weighin/game0/task2.png",
-	"https://s3.amazonaws.com/weighin/game0/task3.png",
-	"https://s3.amazonaws.com/weighin/game0/task4.png",
-	"https://s3.amazonaws.com/weighin/game0/task5.png"
-  ];
 var totalImages = linkArray.length - 1;
 var guessArray = [""];
 var nxtBtn = document.getElementById("nextBtn");
@@ -119,7 +78,6 @@ var choiceArray = [];
 canvas.addEventListener("mousedown", getPosition, false);
 function getPosition(event)
   {
-    
     var x = new Number();
     var y = new Number();
     var canvas = document.getElementById("canvas");
@@ -141,7 +99,6 @@ function getPosition(event)
 	console.log(x + ": " + y)
 	array.push([x,y]);
     // alert("x: " + x + "  y: " + y);
-  
   }
 $(document).ready(function(){
 	//Canvas stuff
@@ -149,8 +106,6 @@ $(document).ready(function(){
 	ctx = canvas.getContext("2d");
 	var w = $("#canvas").width();
 	var h = $("#canvas").height();
-	
-	
 	function init()
 	{
 		//every 90ms
@@ -160,7 +115,6 @@ $(document).ready(function(){
 		input_loop = setInterval(fixInput, 10);
 	}
 	init();
-	
 	function fixInput() {
 		console.log(txt1.value);
 		if (txt1.value.length > 1) {
@@ -232,7 +186,6 @@ $(document).ready(function(){
 		makeRect(310);
 		makeUnitRect();
 	}
-	
 })
 </script>
 
