@@ -22,6 +22,27 @@
     <link rel="stylesheet" type="text/css" href="{% static "frontsite/gamepage.css" %}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!-- Google Analytics -->
+   <script>
+        $(document).ready(function(){
+            $('.thegame').hide()
+            $("button").click(function(){
+            $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result)
+            {
+            if(result['success'] == "True")
+                {
+                  $("<p>"+result['points']+"</p>").appendTo("#experience");
+                    $(".login").hide()
+                    $(".loginButton").hide()
+                    $(".thegame").show()
+                }
+            else
+                {
+                    alert("Account not found. Try logging in again");
+                }
+         });
+      });
+    });
+    </script>
 </head>
 <body>
 <div class ="navigation">
@@ -42,6 +63,15 @@
                         </p>
                         <iframe class="thegame" 
                         src="/static/games/weighinWidget/weighin.html" width="500" height="500" frameborder="0"></iframe>
+                        <form class="login">
+                            Username:<br>
+                            <input type="text" name="username" id="user">
+                            <br>
+                            Password:<br>
+                            <input type="text" name="password" id="pass">
+                        </form>
+                        <button class="loginButton">Login</button>
+
                     </div>
                     <div class="row experience" id= "experience">
                         <p>
