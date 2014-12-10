@@ -14,6 +14,7 @@ django-rest-framework-mongoengine
 django-rest-swagger
 
 # Django Dependencies
+django-cors-headers
 dj-static
 markdown
 

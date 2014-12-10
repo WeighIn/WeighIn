@@ -33,7 +33,7 @@ class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ('task_id', 'app_id', 'worth', 'accuracy', 'data')
-        read_only_fields = ('task_id', 'app_id')
+        read_only_fields = ('task_id', 'app_id', 'complete')
 
 
 class ResultSerializer(serializers.ModelSerializer):

@@ -16,7 +16,7 @@ body {
 .head {
 	font-size: 2.7em;
 	margin-bottom: -3px;
-    margin-top: -20px;
+    margin-top: 20px;
 }
 .subhead {
     font-size: 1.2em;
@@ -43,8 +43,8 @@ body {
     padding-right: 25px;
     font-size: 1.2em;
     position: relative;
-    left:45%;
-    top:-40px;
+    left:80%;
+    top:-50px;
     vertical-align:middle;
 
 }

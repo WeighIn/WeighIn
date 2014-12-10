@@ -1,0 +1,159 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> Weigh In </title>
+
+    <!-- Metas -->
+    <meta type="author" content="Weigh In"/>
+    <meta type="description" content="Gamifying crowdsourcing"/>
+    <meta name="viewport" content="initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta http-eqiv="content-type" content="text/html; charset=utf-8"/>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,700"/>
+    <!--<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700'/>-->
+    <!-- bootstrap, font awesome and index.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "frontsite/gamepage.css" %}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- Google Analytics -->
+   <script>
+        $(document).ready(function(){
+            $('.thegame').hide()
+            $('#experienceVisual').hide()
+            $("button").click(function(){
+            $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result)
+            {
+            if(result['success'] == "True")
+                {
+                  setCookie("username",$('#user').val(),2);
+                  setCookie("password",$('#pass').val(),2);
+                  $("<p align=center>"+result['username'] + " " + "<u>" + "logout"+"</u>" + "</p>").appendTo("#experience");
+                  $(".login").hide()
+                  $(".loginButton").hide()
+                  $(".thegame").show()
+                  $('#experienceVisual').show()
+                }
+            else
+                {
+                    alert("Account not found. Try logging in again");
+                }
+         });
+      });
+    });
+
+        function setCookie(cname, cvalue, exdays)
+         {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+    </script>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div class ="navigation">
+    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt="" style="transform: rotate(-360deg);"/>
+    <ul class="navbar">
+        <li> <a  href="/"> <i class="fa fa-home"></i></a></li>
+        <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
+        <li> <a href=""> <i class="fa fa-send-o active"></i></a></li>
+    </ul>
+</div>
+    <div class="container-fluid main-container">
+        <div class="row main-row">
+            <div class="col-xs-8 ">
+                <div class="container-fluid game-container">
+                    <div class="row game" id="game">
+                        <p>
+                            
+                        </p>
+                        <iframe class="thegame" 
+                        src="/static/games/weighinWidget/weighin.html" width="500" height="500" frameborder="0" align="center"></iframe>
+                        <form class="login">
+                            Username:<br>
+                            <input type="text" name="username" id="user">
+                            <br>
+                            Password:<br>
+                            <input type="password" name="password" id="pass">
+                        </form>
+                        <button class="loginButton">Login</button>
+
+                    </div>
+                    <div class="row experience" id= "experience">
+                      <div id="experienceVisual">
+                        <div id="level"></div>
+                        <h1 id="levelLabel">40<h1>
+                        <div id="progressExp"></div>
+                        <div id="totalExp"></div>
+                        <h1 id="experienceLabel">50/100</h1>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="container-fluid score-container">
+                    <div class="row score" id="tableTitle">
+                        TOP SCORES
+                        <table id="tblUser">
+                          <tr>
+                            <th>Username</th>
+                            <th>Points</th>
+                          </tr>
+                          <tr>
+                            <td>thieck2</td>
+                            <td>1537</td>
+                          </tr>
+                          <tr>
+                            <td>kothuri2</td>
+                            <td>989</td>
+                          </tr>
+                          <tr>
+                            <td>kazu</td>
+                            <td>833</td>
+                          </tr>
+                          <tr>
+                            <td>aKuznet</td>
+                            <td>742</td>
+                          </tr>
+                          <tr>
+                            <td>pasari2</td>
+                            <td>678</td>
+                          </tr>
+                          <tr>
+                            <td>mittal2</td>
+                            <td>597</td>
+                          </tr>
+                          <tr>
+                            <td>plecki2</td>
+                            <td>564</td>
+                          </tr>
+                          <tr>
+                            <td>cliento2</td>
+                            <td>435</td>
+                          </tr>
+                          <tr>
+                            <td>shah2</td>
+                            <td>378</td>
+                          </tr>
+                          <tr>
+                            <td>breckenridge2</td>
+                            <td>273</td>
+                          </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

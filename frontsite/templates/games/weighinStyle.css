@@ -2,16 +2,16 @@
   height: 500px;
   position: absolute;
   width: 500px;
-  left: 30%;
-  top: 10%;
+  left: 0%;
+  top: 0%;
 }
 
 #intro {
   height: 500px;
   position: absolute;
   width: 500px;
-  left: 30%;
-  top: 10%;
+  left: 0%;
+  top: 0%;
   color: #ffffff;
 }
 
@@ -19,6 +19,14 @@
   height: 100%;
   width: 100%;
 
+}
+
+#mainImg {
+  position: absolute;
+  bottom: 0px;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
 }
 
 #introCanvas {
@@ -39,7 +47,8 @@
 }
 
 #progressStatus {
-  left: 265px;
+  left: 250px;
+  text-align: center;
   position: absolute;
   font-size: 30px;
   width: 50px;
@@ -59,7 +68,7 @@
 }
 
 #progressBar {
-  left: 80px;
+  left: 0px;
   position: absolute;
   width: 420px;
   height: 40px;

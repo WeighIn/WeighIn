@@ -37,13 +37,17 @@ function getNextTuple(i, inputArray) {
     return inputArray[i];
 }
 
-function displayTuple(ith, colorArray) {
+function displayTuple(ith, colorArray, proportion) {
     $('.option1 p').text(ith[0]);
     $('.option1').css("background-color", colorArray[0]);
     $('.option2 p').text(ith[1]);
     $('.option2').css("background-color", colorArray[1]);
     $('.option3 p').text(ith[2]);
     $('.option3').css("background-color", colorArray[2]);
+
+    $('#progress').css({
+        'width': (proportion*100)+'%'
+    });
 }
 function getTextFromOption(adiv) {
     return $(adiv).find('p').text();
@@ -60,7 +64,7 @@ $(document).ready(function() {
     var ith = getNextTuple(i,arr);
     var colorArray = getRandColors();
     
-    displayTuple(ith, colorArray);
+    displayTuple(ith, colorArray,0);
 
    var output = [];
    var choice;
@@ -73,7 +77,7 @@ $(document).ready(function() {
         if (i == arr.length - 1)
             i = 0;
         if (i < arr.length - 1) {
-            displayTuple(getNextTuple(++i,arr), getRandColors());
+            displayTuple(getNextTuple(++i,arr), getRandColors(), i/arr.length);
             $('.img').attr("src",getRandImg())
         }
     });
@@ -85,7 +89,7 @@ $(document).ready(function() {
         if (i == arr.length - 1)
             i = 0;
         if (i < arr.length -1 ) {
-            displayTuple(getNextTuple(++i,arr), getRandColors());
+            displayTuple(getNextTuple(++i,arr), getRandColors(),i/arr.length);
             $('.img').attr("src",getRandImg())
         } 
 
@@ -98,7 +102,7 @@ $(document).ready(function() {
         if (i == arr.length - 1)
             i = 0;
         if (i < arr.length -1 ) {
-            displayTuple(getNextTuple(++i,arr), getRandColors());
+            displayTuple(getNextTuple(++i,arr), getRandColors(),i/arr.length);
             $('.img').attr("src",getRandImg())
         } 
     });

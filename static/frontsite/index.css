@@ -106,7 +106,7 @@ body {
     padding-right: 25px;
     font-size: 1.2em;
     position: relative;
-    left:45%;
+    left:80%;
     top:-40px;
     vertical-align:middle;
 
@@ -154,7 +154,6 @@ body {
     text-align: right;
 
     padding: 10px;
-    border-top: solid 1px rgba(155,155,155,0.9);
 }
 
 .container-fluid {

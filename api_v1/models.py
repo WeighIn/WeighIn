@@ -7,12 +7,17 @@ class Profile(models.Model):
     user_id = models.OneToOneField(User, related_name="Profile")
     points = models.BigIntegerField(default=0)
 
+    def __unicode__(self):
+        return str(self.user_id)
 
 class Application(models.Model):
     app_id = models.BigIntegerField(primary_key=True)
     user_id = models.OneToOneField(User, related_name="Application")  # Owner
     weight = models.IntegerField(default=1)
-    points = models.BigIntegerField(default=0)
+    points = models.BigIntegerField(default=1)
+
+    def __unicode__(self):
+        return str(self.app_id)
 
     class Meta:
         permissions = (
@@ -28,6 +33,10 @@ class Task(models.Model):
     worth = models.FloatField()
     accuracy = models.IntegerField()
     data = models.TextField()
+    complete = models.BooleanField()
+
+    def __unicode__(self):
+        return str(self.task_id)
 
     class Meta:
         permissions = (
@@ -43,6 +52,9 @@ class Result(models.Model):
     user_id = models.ForeignKey(User, related_name="Results")
     submit_date = models.DateField(auto_now_add=True)
     data = models.TextField()
+
+    def __unicode__(self):
+        return str(self.result_id)
 
     class Meta:
         permissions = (
