@@ -27,7 +27,7 @@
         <input type="text" id="textInput3" placeholder="0">
         <input type="text" id="textInput4" placeholder="0">
         <input type="text" id="textInput5" placeholder="0">
-        <h3 class="units">kg</h3>
+        <h3 class="units">lb</h3>
         <button type="submit" class="myButton next" id="nextBtn" onclick="nextButtonClicked()">Next</button>
 
     </div>
@@ -76,7 +76,7 @@
     var txt4 = document.getElementById("textInput4");
     var txt5 = document.getElementById("textInput5");
     nxtBtn.onclick = function() {
-        if (currentImage < totalImages) {
+        if (currentImage <= totalImages) {
             alert(currentImage + "   " + totalImages);
             guessArray[currentImage] = txt1.value+txt2.value+txt3.value+txt4.value+txt5.value;
             currentImage = currentImage+1;
