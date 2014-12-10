@@ -2,14 +2,20 @@
     margin-top: 4%;
 }
 
+#tableTitle {
+    left: 200px;
+    text-align: center;
+}
+
 #tblUser {
     position: absolute;
     text-align: center;
-    left: 0px;
+    left: 14px;
 }
 
 #tblUser th {
     width: 200px;
+    text-align: center;
 }
 
 #tblUser td {
