@@ -29,7 +29,9 @@
         <input type="text" id="textInput5" placeholder="0">
         <h3 class="units">lb</h3>
         <button type="submit" class="myButton next" id="nextBtn" onclick="nextButtonClicked()">Next</button>
-
+    </div>
+    <div id="finish">
+            <h1>Thank you for playing!<h1>
     </div>
 </body>
 
@@ -48,7 +50,7 @@
     {
         $.getJSON("http://dev.weighin.me/api/1/hard_game_begin/?game_num=0",function(result)
         {
-            for( var item in result ){
+            for(var item in result) {
                 linkArray.push(result[item]["source"]);
             }
             totalImages = linkArray.length - 1;
@@ -76,8 +78,8 @@
     var txt4 = document.getElementById("textInput4");
     var txt5 = document.getElementById("textInput5");
     nxtBtn.onclick = function() {
-        if (currentImage <= totalImages) {
-            alert(currentImage + "   " + totalImages);
+        if (currentImage < totalImages) {
+            //alert(currentImage + "   " + totalImages);
             guessArray[currentImage] = txt1.value+txt2.value+txt3.value+txt4.value+txt5.value;
             currentImage = currentImage+1;
             progressBar.style.width=""+(currentImage*500/totalImages)+"px";
@@ -88,6 +90,9 @@
             txt4.value = "0";
             txt5.value = "0";
             mainImg.src = linkArray[currentImage];
+        } else if (currentImage == totalImages) {
+            guessArray[currentImage] = txt1.value+txt2.value+txt3.value+txt4.value+txt5.value;
+            goToFinish();
         }
 
     };
@@ -101,6 +106,11 @@
     var choiceArray = [];
     var canvas = document.getElementById("canvas");
     canvas.addEventListener("mousedown", getPosition, false);
+
+    var finishCanvas = document.getElementById('finish');
+    finishCanvas.setAttribute('class','hidden');
+    var gameCanvas = document.getElementById('game');
+
     function getPosition(event)
       {
         var x = new Number();
@@ -211,6 +221,11 @@
             makeUnitRect();
         }
 
+        function goToFinish() {
+        gameCanvas.setAttribute('class','hidden');
+        finishCanvas.setAttribute('class', 'visible');
+    }
+
 </script>
 
 <script type="text/javascript">
@@ -226,7 +241,7 @@
     }, false);
 */
     function goToGame() {
-        alert(currentImage + "    " + totalImages);
+        //alert(currentImage + "    " + totalImages);
         gameCanvas.setAttribute('class','visible');
         introCanvas.setAttribute('class', 'hidden');
     }
