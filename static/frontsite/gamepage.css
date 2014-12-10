@@ -1,6 +1,13 @@
 .main-row {
     margin-top: 4%;
 }
+
+#tblUser {
+    position: absolute;
+    text-align: center;
+    left: 200px;
+}
+
 .navbar li {
     display: inline-block;
     padding-right: 25px;
