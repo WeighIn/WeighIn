@@ -39,15 +39,10 @@
     var linkArray = [];
     var currentImage = 0;
     var totalImages = 0;
-    var guessArray = [""];
+    var guessArray = [];
 
     var nxtBtn = document.getElementById("nextBtn");
     $("#nextBtn").prop("disabled", true); // disable it until we received json response
-
-    var progressBar = document.getElementById("progressBar");
-    progressBar.style.width=""+0+"px";
-    var progressStatus = document.getElementById("progressStatus");
-    progressStatus.innerHTML = currentImage + "/" + totalImages;
 
     $(document).ready(function()
     {
@@ -62,8 +57,14 @@
         });
     });
 
+    
+
     function setImages()
     {
+        var progressBar = document.getElementById("progressBar");
+        progressBar.style.width=""+0+"px";
+        var progressStatus = document.getElementById("progressStatus");
+        progressStatus.innerHTML = currentImage + "/" + totalImages;
         console.log("setting image...");
         var mainImg = document.getElementById("mainImg");
         mainImg.src = linkArray[currentImage];
@@ -76,6 +77,7 @@
     var txt5 = document.getElementById("textInput5");
     nxtBtn.onclick = function() {
         if (currentImage < totalImages) {
+            alert(currentImage + "   " + totalImages);
             guessArray[currentImage] = txt1.value+txt2.value+txt3.value+txt4.value+txt5.value;
             currentImage = currentImage+1;
             progressBar.style.width=""+(currentImage*500/totalImages)+"px";
@@ -87,6 +89,7 @@
             txt5.value = "0";
             mainImg.src = linkArray[currentImage];
         }
+
     };
     var ctx;
     //var time = 60;
@@ -223,6 +226,7 @@
     }, false);
 */
     function goToGame() {
+        alert(currentImage + "    " + totalImages);
         gameCanvas.setAttribute('class','visible');
         introCanvas.setAttribute('class', 'hidden');
     }
