@@ -24,6 +24,7 @@
    <script>
         $(document).ready(function(){
             $('.thegame').hide()
+            $('#experienceVisual').hide()
             $("button").click(function(){
             $.getJSON("http://dev.weighin.me/api/1/login/?username=" + $('#user').val() + "&password=" + $('#pass').val(),function(result)
             {
@@ -35,6 +36,7 @@
                     $(".login").hide()
                     $(".loginButton").hide()
                     $(".thegame").show()
+                    $('#experienceVisual').show()
                 }
             else
                 {
