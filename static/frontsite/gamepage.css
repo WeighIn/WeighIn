@@ -2,6 +2,49 @@
     margin-top: 4%;
 }
 
+#level {
+    position: absolute;
+    top:10px;
+    width: 100px;
+    height: 100px;
+    background-color: #14A697;
+    left: 40px;
+}
+
+#progressExp {
+    position: absolute;
+    top: 30px;
+    width: 200px;
+    left: 140px;
+    height: 80px;
+    background-color: #F2C12E;
+}
+
+#totalExp {
+    position: absolute;
+    top: 30px;
+    width: 400px;
+    left: 140px;
+    height: 80px;
+    background-color: #F27649;
+}
+
+#levelLabel {
+    font-size: 50px;
+    top: 20px;
+    text-align: center;
+    left: 60px;
+    color: #ffffff;
+}
+
+#experience {
+    font-size: 30px;
+    top: 40px;
+    text-align: center;
+    left: 250px;
+    color: #ffffff;
+}
+
 #tableTitle {
     left: 50%;
     text-align: center;
