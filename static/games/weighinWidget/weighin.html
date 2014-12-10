@@ -40,6 +40,7 @@
         <!-- Google Analytics -->
 <script type="text/javascript">
     var linkArray = [];
+    var keyArray = [];
     var currentImage = 0;
     var totalImages = 0;
     var guessArray = [];
@@ -53,14 +54,13 @@
         {
             for(var item in result) {
                 linkArray.push(result[item]["source"]);
+                keyArray.push(item);
             }
             totalImages = linkArray.length - 1;
             $("#nextBtn").prop("disabled", false); // enable
             setImages();
         });
     });
-
-    
 
     function setImages()
     {
@@ -223,9 +223,24 @@
         }
 
         function goToFinish() {
-            console.log(guessArray);
+        console.log(guessArray);
         gameCanvas.setAttribute('class','hidden');
         finishCanvas.setAttribute('class', 'visible');
+        var username = getCookie("username");
+        var password = getCookie("password");
+        alert(username + password);
+    }
+
+    function getCookie(cname)
+    {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+        }
+        return "";
     }
 
 </script>

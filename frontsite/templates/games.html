@@ -29,6 +29,8 @@
             {
             if(result['success'] == "True")
                 {
+                  setCookie("username",$('#.user').val(),2);
+                  setCookie("password",$('#.pass').val(),2);
                   $("<p>"+result['points']+"</p>").appendTo("#experience");
                     $(".login").hide()
                     $(".loginButton").hide()
@@ -41,6 +43,14 @@
          });
       });
     });
+
+        function setCookie(cname, cvalue, exdays)
+         {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
     </script>
 <style>
 table, th, td {
