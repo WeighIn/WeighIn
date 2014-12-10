@@ -13,11 +13,12 @@
 
 #progressExp {
     position: absolute;
-    top: 560px;
+    top: 570px;
     width: 200px;
     left: 270px;
-    height: 80px;
+    height: 60px;
     background-color: #F2C12E;
+    z-index: 10;
 }
 
 #totalExp {
@@ -38,11 +39,12 @@
     color: #ffffff;
 }
 
-#experience {
+#experienceLabel {
+    position: absolute;
     font-size: 30px;
-    top: 40px;
+    top: 550px;
     text-align: center;
-    left: 250px;
+    left: 350px;
     color: #ffffff;
 }
 
