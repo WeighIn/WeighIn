@@ -54,7 +54,7 @@ var txt3 = document.getElementById("textInput3");
 var txt4 = document.getElementById("textInput4");
 var txt5 = document.getElementById("textInput5");
 nxtBtn.onclick= function() {
-	if (currentImage < totalImages) {
+	if (currentImage <= totalImages) {
 		guessArray[currentImage] = txt1.value+txt2.value+txt3.value+txt4.value+txt5.value;
 		currentImage = currentImage+1;
 		progressBar.style.width=""+(currentImage*420/totalImages)+"px";
