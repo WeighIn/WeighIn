@@ -132,7 +132,7 @@ a:hover {
     background-color: lightgray;
 }
 
-.game iframe{
+div.rowgame iframe{
     display: block;
     margin-left: auto;
     margin-right: auto;
