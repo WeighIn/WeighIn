@@ -61,7 +61,8 @@
 }
 
 #tblUser th {
-    width: 50%;
+    width: 200px;
+    left: 5px;
     text-align: center;
 }
 
