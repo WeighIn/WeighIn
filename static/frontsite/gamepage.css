@@ -4,40 +4,42 @@
 
 #level {
     position: absolute;
-    top:10px;
+    top:550px;
     width: 100px;
     height: 100px;
     background-color: #14A697;
-    left: 40px;
+    left: 170px;
 }
 
 #progressExp {
     position: absolute;
-    top: 30px;
+    top: 560px;
     width: 200px;
-    left: 140px;
+    left: 270px;
     height: 80px;
     background-color: #F2C12E;
 }
 
 #totalExp {
     position: absolute;
-    top: 30px;
+    top: 560px;
     width: 400px;
-    left: 140px;
+    left: 270px;
     height: 80px;
     background-color: #F27649;
 }
 
 #levelLabel {
+    position: absolute;
     font-size: 50px;
-    top: 20px;
+    top: 550px;
     text-align: center;
-    left: 60px;
+    left: 190px;
     color: #ffffff;
 }
 
 #experience {
+    position: absolute;
     font-size: 30px;
     top: 40px;
     text-align: center;
