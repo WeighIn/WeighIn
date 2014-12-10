@@ -32,7 +32,7 @@
     </div>
     <div id="finish">
         <canvas id="finishCanvas" width="500" height="500"></canvas>
-        <h1 id="thankyou">Thank you!<h1>
+        <h1 id="thankyou">Thank you!</h1>
     </div>
 </body>
 
@@ -44,6 +44,7 @@
     var currentImage = 0;
     var totalImages = 0;
     var guessArray = [];
+    var currentScore = 0;
 
     var nxtBtn = document.getElementById("nextBtn");
     $("#nextBtn").prop("disabled", true); // disable it until we received json response
@@ -105,6 +106,7 @@
     var majorArray = [];
     var picturemajorArray = [];
     var choiceArray = [];
+    var finishedScore = document.getElementById("thankyou");
     var canvas = document.getElementById("canvas");
     canvas.addEventListener("mousedown", getPosition, false);
 
@@ -223,12 +225,26 @@
         }
 
         function goToFinish() {
-        console.log(guessArray);
-        gameCanvas.setAttribute('class','hidden');
-        finishCanvas.setAttribute('class', 'visible');
-        var username = getCookie("username");
-        var password = getCookie("password");
-        alert(username + password);
+            console.log(guessArray);
+            gameCanvas.setAttribute('class','hidden');
+            finishCanvas.setAttribute('class', 'visible');
+            var username = getCookie("username");
+            var password = getCookie("password");
+
+            var string = "";
+            for(i = 0; i < keyArray.length; i++)
+                string += keyArray[i] + "=" + guessArray[i] + "&";
+
+            $.getJSON("http://dev.weighin.me/api/1/hard_submit?username="+username+"&password="+password+"&game_num=0&" + string,function(result)
+            {
+
+                currentScore = (result['delta_points']);
+                finishedScore.innerHTML = "Thank you!" + "\n" + "+" + currentScore;
+            
+        });
+
+
+        
     }
 
     function getCookie(cname)
