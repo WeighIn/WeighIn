@@ -47,6 +47,15 @@
   border-color: #f2c12e;
 }
 
+#finishCanvas {
+  height: 100%;
+  width: 100%;
+  background-color: #f25252;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #f2c12e;
+}
+
 #stats {
   background-color: #f25252;
   width: 500px;
