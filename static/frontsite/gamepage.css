@@ -41,10 +41,11 @@
 
 #experienceLabel {
     position: absolute;
+    z-index: 20;
     font-size: 30px;
-    top: 550px;
+    top: 562px;
     text-align: center;
-    left: 350px;
+    left: 410px;
     color: #ffffff;
 }
 
