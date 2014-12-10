@@ -29,8 +29,8 @@
             {
             if(result['success'] == "True")
                 {
-                  setCookie("username",$('#.user').val(),2);
-                  setCookie("password",$('#.pass').val(),2);
+                  setCookie("username",$('#user').val(),2);
+                  setCookie("password",$('#pass').val(),2);
                   $("<p>"+result['points']+"</p>").appendTo("#experience");
                     $(".login").hide()
                     $(".loginButton").hide()
