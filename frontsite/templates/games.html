@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "frontsite/gamepage.css" %}">
-    
-    <script type='text/javascript' src="{% static "frontsite/index.js" %}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!-- Google Analytics -->
    <script>
@@ -34,7 +32,7 @@
                 {
                   setCookie("username",$('#user').val(),2);
                   setCookie("password",$('#pass').val(),2);
-                  
+                  $("<p>"+result['username']+"</p>").appendTo("#experience");
                   $(".login").hide()
                   $(".loginButton").hide()
                   $(".thegame").show()
@@ -64,7 +62,7 @@ table, th, td {
 </head>
 <body>
 <div class ="navigation">
-    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
+    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt="" style="transform: rotate(-360deg);"/>
     <ul class="navbar">
         <li> <a  href="/"> <i class="fa fa-home"></i></a></li>
         <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
