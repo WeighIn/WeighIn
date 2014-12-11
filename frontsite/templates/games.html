@@ -3,7 +3,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title> WeighIn </title>
+    <title> Weigh In </title>
 
     <!-- Metas -->
     <meta type="author" content="Weigh In"/>
@@ -33,7 +33,7 @@
                 {
                   setCookie("username",$('#user').val(),2);
                   setCookie("password",$('#pass').val(),2);
-                  $("<p align=center>"+result['username'] + " (" + "<u>" + logout""+"</u>" + ")" + "</p>").appendTo("#experience");
+                  $("<p align=center>"+result['username'] + " " + "<u>" + "logout"+"</u>" + "</p>").appendTo("#experience");
                   $(".login").hide()
                   $(".loginButton").hide()
                   $(".thegame").show()
@@ -63,7 +63,7 @@ table, th, td {
 </head>
 <body>
 <div class ="navigation">
-    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt=""/>
+    <img class="logo" src="{% static "frontsite/Logo.png" %}" alt="" style="transform: rotate(-360deg);"/>
     <ul class="navbar">
         <li> <a  href="/"> <i class="fa fa-home"></i></a></li>
         <li> <a href="/login"> <i class="fa fa-user"></i></a></li>
