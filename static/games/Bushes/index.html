@@ -1,0 +1,122 @@
+<canvas id="canvas" width="500" height="500"></canvas>
+ <head>
+<meta charset="UTF-8">
+</head> 
+<!-- Jquery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+var score = 0
+var bushcount = 30
+var ctx;
+var stageArray = [true, true, false, false, false];
+var clickArray = [];
+canvas.addEventListener("mousedown", processClick, false);
+
+function processClick(event)
+  {
+    if (score>0 && bushcount>0){
+    var x = new Number();
+    var y = new Number();
+    var canvas = document.getElementById("canvas");
+
+    if (event.x != undefined && event.y != undefined)
+    {
+      x = event.x;
+      y = event.y;
+    }
+    else // Firefox method to get the position
+    {
+      x = event.clientX + document.body.scrollLeft +
+          document.documentElement.scrollLeft;
+      y = event.clientY + document.body.scrollTop +
+          document.documentElement.scrollTop;
+    }
+
+    x -= canvas.offsetLeft;
+    y -= canvas.offsetTop;
+	console.log(ctx);
+	console.log(x + ": " + y)
+	if (stageArray[1] == true)
+	{
+		var image1 = new Image();
+		image1.src = "bush.png";
+		bushcount--;
+		clickArray.push([x,y]);
+	}
+	
+    // alert("x: " + x + "  y: " + y);
+  }
+  }
+
+$(document).ready(function(){
+	//Canvas stuff
+	var canvas = $("#canvas")[0];
+	ctx = canvas.getContext("2d");
+	var w = $("#canvas").width();
+	var h = $("#canvas").height();
+	
+	score = 400;
+	
+	function init()
+	{
+		//every 90ms
+		if(typeof game_loop != "undefined") clearInterval(game_loop);
+		game_loop = setInterval(paint, 90);
+
+	}
+	init();
+	
+
+	function paint()
+	{
+		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		
+		if (stageArray[1] == true)
+		{
+			var score_text = "";
+			var bush_text = "";
+
+			var image = new Image();
+			image.src = "sample3.jpg";
+			ctx.drawImage(image, 0, 50, 500, 400);
+		
+			var clickArrayLength = clickArray.length;
+			var image1 = new Image();
+			image1.src = "bush5.png";
+			for (var i = 0; i < clickArrayLength; i++) 
+			{
+	    		ctx.drawImage(image1, clickArray[i][0]-25, clickArray[i][1]-25,50,50);
+			}
+
+		    if(score<0 || bushcount <0) 
+		    {
+		    	score_text = "It's over </3";
+		    	var a = "[";
+		    	for (var i = 0; i < clickArrayLength; i++) 
+					{
+	    				a = a + "(" + clickArray[i] + "),";
+					}
+					a = a + "]";
+					alert(a);
+		    }
+		    else
+		    {
+				//Lets paint the score
+				bush_text = "Bush left: " + bushcount;
+				score_text = "Time left: " + score/10 + " s";
+
+			}
+			ctx.font="20px Verdana";
+			ctx.fillText("Quick	, hide everyone with bushes! #turnup", 25, 30);
+			ctx.font="30px Verdana";
+			ctx.fillText(score_text, 25, 475);
+			ctx.fillText(bush_text, 300, 475);
+			score--;
+
+		}
+		
+	}
+	
+})
+</script>
