@@ -103,11 +103,7 @@
 .navbar li a {
     color: gray;
 }
-.logo:hover {
-    -webkit-transform:rotate(360deg);
-    -moz-transform:rotate(360deg);
-    -o-transform:rotate(360deg);
-}
+
 .fa {
     color: white;
     opacity:1.0;
