@@ -1,7 +1,7 @@
 WeighIn
 =======
 
-[![Build Status](https://magnum.travis-ci.com/dylanplecki/WeighIn.svg?token=he1AtLNKhnxJsTXoLfHx&branch=develop)](https://magnum.travis-ci.com/dylanplecki/WeighIn)
+[![Build Status](https://travis-ci.org/WeighIn/WeighIn.svg?branch=develop)](https://travis-ci.org/WeighIn/WeighIn)
 
 Links
 -----
