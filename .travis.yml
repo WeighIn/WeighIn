@@ -1,56 +1,40 @@
-
 language: python
 sudo: false
-
-# Notification Preferences
 notifications:
   email: false
   slack: weighin:LF7vfHWDvYn0Uijaoj6ZDg6e
-
-# Set Test Versions
 python:
-#  - "2.6"
-  - "2.7"
-#  - "3.2"
-#  - "3.3"
-#  - "3.4"
-
-# Set Cache Options
+- '2.7'
 cache:
   directories:
-    - $HOME/.pip-cache/
-    - /home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages
-
-# Install Dependencies
+  - "$HOME/.pip-cache/"
+  - "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages"
 install:
-  - "df"
-  - "pip install -r requirements.txt --download-cache $HOME/.pip-cache"
-
-# Run Tests
+- df
+- pip install -r requirements.txt --download-cache $HOME/.pip-cache
 script:
-  - |
-    if [ ${TRAVIS_BRANCH} == master ]; then
-      BUILD_ENV=prod
-    elif [ ${TRAVIS_BRANCH} == prod_web ]; then
-      BUILD_ENV=prod_web
-    elif [ ${TRAVIS_BRANCH} == prod_api ]; then
-      BUILD_ENV=prod_api
-    else
-      BUILD_ENV=dev
-    fi
-    export BUILD_ENV
-  - python manage.py test
-  - df
-
-# Deploy to Heroku
+- |
+  if [ ${TRAVIS_BRANCH} == master ]; then
+    BUILD_ENV=prod
+  elif [ ${TRAVIS_BRANCH} == prod_web ]; then
+    BUILD_ENV=prod_web
+  elif [ ${TRAVIS_BRANCH} == prod_api ]; then
+    BUILD_ENV=prod_api
+  else
+    BUILD_ENV=dev
+  fi
+  export BUILD_ENV
+- python manage.py test
+- df
 deploy:
   provider: heroku
   strategy: api
-  api_key: "bc7d0355-330e-4ca4-af3b-4d6055993b43"
+  api_key:
+    secure: WzkV30euIbwoE+VtDZzog8sWgsV5FYqLvIFB6wluB5vhopccX9z63ASG/VAv+VoJj9MyK1IzP6tVBlWEDiL0/yLz9KG8Va8duST8GcWhIpGt2FUUHGdSXTy9pFV8inLrjjR+oKeSJPtjFpAm9szDbWJoeetrgMguEJNFWbt7gHU=
   app:
     master: weighin-app
     develop: dev-weighin-app
     prod_web: web-prod-weighin-app
     prod_api: api-prod-weighin-app
   run:
-      - "python manage.py syncdb"
+  - python manage.py syncdb
